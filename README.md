@@ -34,7 +34,7 @@ $ npm run build
 
 ## 圖庫 (已壓縮過圖片，以今年流行 3D 為主)
 
-[dist/images/]
+# [dist/images/]
 
 ## Icon Font 迷你包 （之前包的偏大包）
 

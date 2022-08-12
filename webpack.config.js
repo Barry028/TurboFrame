@@ -14,7 +14,6 @@ const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const glob = require('glob-all');
-
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // //取得副檔名
@@ -52,60 +51,72 @@ var minifyHtml = {
 
 
 
-// const HTMLReg = /\/([w-]+)(?=.html)/;
-// const JSReg = /\/([w-]+)(?=.js)/;
+// const HTMLReg = new RegExp(/([\w])+(?=.html)/);
+// // const JSReg =new RegExp(//([-]+)(?=.js)/);
 
 // const html = glob.sync('./src/pages/**/*.html').map(path => {
-//   let name = path.match(HTMLReg)[1] // 從路徑中提取出檔名
+//   let name = path.match(HTMLReg)[0] // 從路徑中提取出檔名
 //   console.log(name);
 //   return new HtmlWebpackPlugin({
 //     template: path,
 //     filename: name + '.html',
-//     chunks: [name]
+//     chunks: [name],
+// minifyHtml: minifyHtml
 //   })
 // })
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+// const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 // var webpack = require('webpack');
 // 
 
 
 
-// const HTMLReg = /\/([w-]+)(?=.html)/;
-//   const JSReg = /\/([w-]+)(?=.js)/;
-//     const html = glob.sync('./src/pages/**/*.html').map(path => {
-//       let name = path.match(HTMLReg)[1] // 從路徑中提取出檔名
-//       console.log(name);
-//       return new HtmlWebpackPlugin({
-//         template: path,
-//         filename: name + '.html',
-//         chunks: [name]
-//       })
-//     })
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const HTMLReg = new RegExp(/([\w])+(?=.html)/);
+const JSReg = new RegExp(/([\w])+(?=.js)/);
+
+
+
+const html = glob.sync('./src/pages/**/*.html').map(path => {
+  let name = path.match(HTMLReg)[0] // 從路徑中提取出檔名
+  console.log(name);
+  return new HtmlWebpackPlugin({
+    template: path,
+    filename: name + '.html',
+    chunks: [name],
+    minify: minifyHtml
+  })
+})
+
+const entries = glob.sync('./src/pages/**/*.js').reduce((prev, next) => {
+  let name = next.match(JSReg)[0];
+  // console.log(name);
+  prev[name] = './' + next;
+  // console.log(prev, prev[name]);
+  return prev
+}, {})
 // var webpack = require('webpack');
 // 
 
 
 
 module.exports = {
-  entry: {
-    "index": './src/pages/index/index.js',
-    '404': './src/pages/404/404.js',
-    "doc": './src/pages/doc/doc.js',
-    "dashboard_v1": './src/pages/dashboard_v1/dashboard_v1.js',
-    'dashboard_v2': './src/pages/dashboard_v2/dashboard_v2.js',
-  },
+  entry: entries,
+  // {
+  //   "index": './src/pages/index/index.js',
+  //   '404': './src/pages/404/404.js',
+  //   "doc": './src/pages/doc/doc.js',
+  //   "dashboard_v1": './src/pages/dashboard_v1/dashboard_v1.js',
+  //   'dashboard_v2': './src/pages/dashboard_v2/dashboard_v2.js',
+  // },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    // filename: 'js/[name].[chunkhash:8].js',
-    filename: 'js/[name]/[name]-bundle.js',
+    filename: 'js/[name].js',
+    path: __dirname + '/dist'
   },
-  devtool: 'source-map',
-  // entry: './src/index.js',
   // output: {
-  //   path: path.resolve(__dirname, 'dist'),
-  //   filename: 'js/[name].js',
-  // }, 
+  //   path: path.resolve(__dirname, './dist'),
+  //   // filename: 'js/[name].[chunkhash:8].js',
+  //   filename: 'js/[name]/[name]-bundle.js',
+  // },
+  devtool: 'source-map',
   optimization: {
     minimizer: [
       new CssMinimizerPlugin({
@@ -143,49 +154,19 @@ module.exports = {
       exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
-
         options: {
           presets: ['@babel/preset-env'],
           plugins: ['lodash']
         }
       }
-    },]
+    }, ]
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name]@[contenthash].css',
       chunkFilename: 'css/[name]@[contenthash].async.css'
     }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/index/index.html',
-      filename: 'index.html',
-      chunks: ['index'],
-      minify: minifyHtml
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/doc/doc.html',
-      filename: 'doc.html',
-      chunks: ['doc'],
-      minify: minifyHtml
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/404/404.html',
-      filename: '404.html',
-      chunks: ['404'],
-      minify: minifyHtml
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/dashboard_v1/dashboard_v1.html',
-      filename: 'dashboard_v1.html',
-      chunks: ['dashboard_v1'],
-      minify: minifyHtml
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/dashboard_v2/dashboard_v2.html',
-      filename: 'dashboard_v2.html',
-      chunks: ['dashboard_v2'],
-      minify: minifyHtml
-    }),
+    html,
     new PurgeCSSPlugin({
       // paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/*`, {
       paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/**/*`, {
@@ -194,6 +175,6 @@ module.exports = {
     }),
     // new BeautifyHtmlWebpackPlugin(),
     // new LodashModuleReplacementPlugin(),
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
   ],
 };

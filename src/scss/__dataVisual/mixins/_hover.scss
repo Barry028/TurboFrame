@@ -1,0 +1,59 @@
+// Hover mixin and `$enable-hover-media-query` are deprecated.
+
+@mixin btn-hover {
+  &:hover:not(:disabled):not(.disabled):not(.btn--disabled),
+  &.hover:not(:disabled):not(.disabled):not(.btn--disabled) {
+    @content;
+  }
+}
+
+@mixin btn-focus {
+  &:focus:not(:disabled):not(.disabled):not(.btn--disabled),
+  &.focus:not(:disabled):not(.disabled):not(.btn--disabled) {
+    @content;
+  }
+}
+
+@mixin btn-active {
+  &:active:not(:disabled):not(.disabled):not(.btn--disabled),
+  &.active:not(:disabled):not(.disabled):not(.btn--disabled) {
+    @content;
+  }
+}
+@mixin btn-disabled {
+  &:disabled,
+  &.disabled,
+  &.btn--disabled {
+    @content;
+  }
+}
+
+@mixin hover {
+  &:hover,
+  &.hover {
+    @content;
+  }
+}
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin plain-hover-focus {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}

@@ -1,0 +1,26 @@
+//
+//  Components -> Backgrounds
+// --------------------------------------------------
+@each $color,
+$value in $theme-colors {
+  .bg-#{$color} {
+    background-color: $value !important;
+  }
+
+  %bg-#{$color} {
+    background-color: $value;
+  }
+}
+
+// .bg-gradient-green {
+//   background: radial-gradient(50.18% 74.31% at 51.32% 20.56%, rgba(0, 221, 179, .231373) 0, rgba(205, 248, 251, 0) 100%);
+// }
+
+// .bg-gradient-blue {
+//   background: linear-gradient(180deg, #e9f8fe, #fff);
+// }
+
+
+// .bg-gradient-purple {
+//   background-image linear-gradient(to right top, rgb(191, 219, 254), rgb(199, 210, 254), rgb(251, 207, 232))
+// }

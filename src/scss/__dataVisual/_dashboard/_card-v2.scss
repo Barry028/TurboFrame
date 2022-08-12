@@ -1,0 +1,154 @@
+/** 
+//  Dashboard Card 卡片 v2
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.dashboard-card.dashboard-card-v2 {
+
+  .dashboard-card-header {
+    border-bottom: 1px solid $border;
+    border-radius: $card-border-width $card-border-width 0 0;
+    font-size: 0;
+    padding: 1.25rem 1rem 1rem;
+
+    &.dashboard-card-header--primary {
+      background-color: rgba($primary, 0.23);
+
+      i {
+        color: $primary;
+      }
+    }
+
+    &.dashboard-card-header--secondary {
+      background-color: rgba($secondary, 0.23);
+
+      i {
+        color: $secondary;
+      }
+    }
+
+    &.dashboard-card-header--tertiary {
+      background-color: rgba($tertiary, 0.23);
+
+      i {
+        color: $tertiary;
+      }
+    }
+
+    &.dashboard-card-header--quaternary {
+      background-color: rgba($quaternary, 0.23);
+
+      i {
+        color: $quaternary;
+      }
+    }
+
+    .dashboard-card-header-lt {
+
+      i,
+      .hd-icon {
+        font-size: 1.25rem;
+        margin-right: .5rem;
+        @include in-bk-mid;
+      }
+
+      h3,
+      .hd-title {
+        font-size: 1.125rem;
+        font-weight: 500;
+        @include in-bk-mid;
+        @include text_overflow($w: calc(100% - 1.75rem));
+      }
+    }
+    .dashboard-card-header-rt {
+
+      // select,
+      // .hd-select {
+      //   background-color: $white;
+      //   border-radius: 4px;
+      //   font-size: .875rem;
+      //   padding: 0.25rem 2rem 0.25rem 0.5rem;
+      //   @include in-bk-mid;
+      // }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+  .dashboard-card .dashboard-card-header .search-result-total {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+  }
+
+  .dashboard-card .dashboard-card-header .search-result-total big {
+    color: #4D78FF;
+    font-weight: 500;
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group {
+    padding: 0 8px 16px;
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group .card-title {
+    font-size: 0;
+    padding: 4px;
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group .card-title h4 {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group .card-list {
+    margin-top: 12px;
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group .card-list li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group .card-list li>a {
+    position: relative;
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: #1A202C;
+    font-size: 16px;
+    padding: 10px 48px;
+    transition: .25s all ease-in-out;
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group .card-list li>a:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group .card-list li>a:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%);
+    border-radius: 6px;
+  }
+
+  .dashboard-card .dashboard-card-body .card-list-group .card-list li>a .b-badge {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .66;
+  }

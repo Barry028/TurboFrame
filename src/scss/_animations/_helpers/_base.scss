@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/*!
+Animate.css - http://daneden.me/animate
+*/
+
+body {
+  backface-visibility: hidden;
+  // -webkit-backface-visibility: hidden;
+  // /* Chrome 和 Safari */
+  // -moz-backface-visibility: hidden;
+  // /* Firefox */
+  // -ms-backface-visibility: hidden;
+  /* Internet Explorer */
+}
+
+.animated {
+  @include animate-prefixer(animation-duration, calc(#{$base-duration}));
+  @include animate-prefixer(animation-fill-mode, $base-fill-mode);
+
+  &.infinite {
+    animation-iteration-count: $base-iteration-count;
+  }
+
+  &.faster {
+    animation-duration: 0.5s;
+  }
+
+  &.fast {
+    animation-duration: 0.75s;
+  }
+
+  &.slow {
+    animation-duration: 2s;
+  }
+
+  &.slower {
+    animation-duration: 4s;
+  }
+
+  &.super-slower {
+    animation-duration: 8s;
+  }
+
+  &.delay-1s {
+    animation-delay: 1s;
+  }
+
+  &.delay-2s {
+    animation-delay:2s;
+  }
+
+  &.delay-3s {
+    animation-delay: 3s;
+  }
+
+  &.delay-4s {
+    animation-delay: 4s;
+  }
+
+  &.delay-5s {
+    animation-delay: 5s;
+  }
+
+  &.hinge {
+    @include animate-prefixer(animation-duration, calc(#{$base-duration} * 2));
+  }
+
+  &.bounceIn,
+  &.bounceOut {
+    @include animate-prefixer(animation-duration, calc(#{$base-duration} * 0.75));
+  }
+
+  &.flipOutX,
+  &.flipOutY {
+    @include animate-prefixer(animation-duration, calc(#{$base-duration} * 0.75));
+  }
+
+  &__repeat-1 {
+    animation-iteration-count: 1;
+    // animation-iteration-count: var(--animate-repeat);
+  }
+
+  &__repeat-2 {
+    animation-iteration-count: calc(1 * 2);
+    // animation-iteration-count: calc(var(--animate-repeat) * 2);
+  }
+
+  &__repeat-3 {
+    animation-iteration-count: calc(1 * 3);
+    // animation-iteration-count: calc(var(--animate-repeat) * 3);
+  }
+}

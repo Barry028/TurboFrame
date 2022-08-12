@@ -1,0 +1,37 @@
+//
+//  Components -> Texts 
+// --------------------------------------------------
+@each $color, $value in $theme-colors {
+    .text-#{$color}{
+        color: $value !important;
+    }
+    %text-#{$color} {
+        color: $value;
+    }
+}
+//==  Link Color
+@each $color, $value in $theme-colors {
+    .link-#{$color} {
+        color: $value;
+        &:hover {
+            color: lighten($value, 20%) !important;
+        }
+    }
+    %link-#{$color} {
+        color: $value;
+        &:hover {
+            color: lighten($value, 20%);
+        }
+    }
+}
+
+// Bg Border Bottom
+@each $color,
+$value in $theme-colors {
+  @include text-bg-before-underline-variant(".text-bg-before-border-#{$color}", $value);
+}
+@each $color,
+$value in $theme-colors {
+  @include text-underline-variant(".text-border-#{$color}", $value);
+}
+

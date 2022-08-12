@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+// 
+//  Mixins > Box Shadow
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    $result: ();
+
+    @if length($shadow)==1 {
+      // We can pass `@include box-shadow(none);`
+      $result: $shadow;
+    }
+
+    @else {
+  }
+
+      // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`
+      @for $i from 1 through length($shadow) {
+        @if nth($shadow, $i) !="none" {
+          $result: append($result, nth($shadow, $i), "comma");
+        }
+      }
+    }
+
+    @if length($result)>0 {
+      box-shadow: $result;
+    }
+}
+
+@mixin shd-none {
+  box-shadow: none;
+}
+
+@mixin shd--hv--ver_1 {
+  box-shadow: $shd--hv--ver--01;
+
+  &:hover {
+    box-shadow: $shd--hv--ver--01--hv;
+  }
+}
+
+@mixin shd--hv--ver_2 {
+  box-shadow: $shd--hv--ver--02;
+
+  &:hover {
+    top: -2px;
+    box-shadow: $shd--hv--ver--02--hv;
+  }
+}
+
+@mixin shd--hv--ver_3 {
+  box-shadow: $shd--hv--ver--03;
+
+  &:hover {
+    box-shadow: $shd--hv--ver--03--hv;
+  }
+}
+
+@mixin shd--hv--ver_4 {
+  box-shadow: $shd--hv--ver--04;
+
+  &:hover {
+    box-shadow: $shd--hv--ver--04--hv;
+  }
+}
+
+@mixin shd--hv--ver_5 {
+  box-shadow: $shd--hv--ver--05;
+
+  &:hover {
+    box-shadow: $shd--hv--ver--05--hv;
+  }
+}

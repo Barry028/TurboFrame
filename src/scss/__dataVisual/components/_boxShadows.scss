@@ -1,0 +1,38 @@
+//
+//  Components -> BoxShadows 
+// --------------------------------------------------
+.shd-none {
+    @include shd-none;
+}
+
+.shd--hv--ver_ {
+    &1 {
+        @include shd--hv--ver_1;
+
+        transition: $transition-base;
+    }
+
+    &2 {
+        @include shd--hv--ver_2;
+
+        transition: $transition-base;
+    }
+
+    &3 {
+        @include shd--hv--ver_3;
+
+        transition: $transition-base;
+    }
+
+    &4 {
+        @include shd--hv--ver_4;
+
+        transition: $transition-base;
+    }
+
+    &5 {
+        @include shd--hv--ver_5;
+
+        transition: $transition-base;
+    }
+}

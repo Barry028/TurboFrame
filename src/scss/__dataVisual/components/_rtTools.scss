@@ -1,0 +1,37 @@
+// 
+//  Components -> RtTools
+// --------------------------------------------------
+
+.rt-fix-tools {
+  height: 4rem;
+  position: fixed;
+  z-index: 999;
+
+  &.count-clock {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 10rem;
+  }
+}
+
+[class*="js-go-to"] {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba($white, 0.66);
+  color: $primary;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 rgba($dark, .16);
+  transition: $transition-base;
+  z-index: 100;
+
+  i {
+    font-size: 2.75rem;
+    @include absolute-center;
+  }
+
+  &:hover,
+  &:focus:hover {
+    color: $primary-700;
+  }
+}

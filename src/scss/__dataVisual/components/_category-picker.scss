@@ -1,0 +1,158 @@
+//
+//  Components -> Category Picker 
+// --------------------------------------------------
+.category-picker {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-scroll-chaining: none;
+    overscroll-behavior: contain;
+    z-index: 1000;
+
+    .category-mask {
+        position: fixed;
+        background-color: rgba($dark, 0.24);
+        transition: opacity .15s linear;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+    }
+
+    .category-modal {
+        width: 100%;
+        transition: transform .3s;
+        max-width: 750px;
+        padding: 0 1rem;
+        height: 100%;
+        margin: auto;
+
+        .category-modal-cnt {
+            overflow: hidden;
+            width: 100%;
+            pointer-events: auto;
+            background-color: $white;
+            border-radius: 0;
+            outline: 0;
+            box-shadow: 0 0 0.5rem 0 $lightgrey;
+            min-height: 530px;
+            margin: 1rem 0;
+
+            @include absolute-center;
+
+            .category-modal-header {
+                font-weight: bolder;
+                text-align: center;
+                padding: .75rem 0;
+
+                .category-close {
+                    border: 0;
+                    outline: 0;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    overflow: hidden;
+                    text-indent: -999px;
+                    cursor: pointer;
+                    background-color: $white;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cpath fill='none' stroke='%237E7E7E' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M22 22l-5-5 5 5 5-5-5 5zm0 0l5 5-5-5-5 5 5-5z'/%3E%3C/svg%3E");
+
+                    @include absolute($T: 0, $R: 0);
+
+                    z-index: 10;
+                }
+            }
+
+            .category-modal-selected {
+                padding: .5rem 1rem;
+
+                .selected-txt {}
+            }
+
+            .category-modal-body {
+                border-top: 1px solid $light;
+                min-height: 384px;
+                overflow: hidden;
+
+                .list-level-one {
+                    border-right: 1px solid $light;
+                    top: 0;
+                    bottom: 0;
+                    position: absolute;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    background-color: #fff;
+                    -webkit-overflow-scrolling: touch;
+                    -ms-scroll-chaining: none;
+                    overscroll-behavior: contain;
+                    width: 50%;
+
+                    &.list-level-two--focus {
+                        display: none;
+                    }
+
+                    @media (max-width: $screen-xs-min) {
+                        width: 100%;
+                    }
+                }
+
+                .category-item {
+                    border-bottom: 1px solid $light;
+                    cursor: pointer;
+                    padding-top: .75rem;
+                    padding-bottom: .75rem;
+                    padding-left: 1rem;
+                    transition: $transition-base;
+
+                    > i {
+                        @include absolute($T: 50%, $R: 1rem);
+
+                        transform: translateY(-50%);
+                    }
+
+                    &:hover,
+                    &.active {
+                        background-color: lighten($primary, 40%);
+                    }
+                }
+
+                .list-level-two {
+                    width: 50%;
+                    top: 0;
+                    bottom: 0;
+                    position: absolute;
+                    right: 0;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    background-color: #fff;
+                    -webkit-overflow-scrolling: touch;
+                    -ms-scroll-chaining: none;
+                    overscroll-behavior: contain;
+
+                    &.list-level-two--focus {
+                        right: 0;
+                    }
+
+                    @media (max-width: $screen-xs-min) {
+                        width: 100%;
+                        right: -100%;
+                    }
+                }
+            }
+
+            .category-modal-footer {
+                box-shadow: 0 -1px 2px 0 #ececeb;
+                padding:.75rem;
+                text-align: center;
+            }
+        }
+    }
+}

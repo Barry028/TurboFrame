@@ -1,0 +1,23 @@
+// stylelint-disable declaration-no-important
+
+// Visibility
+
+@mixin invisible($visibility) {
+  visibility: $visibility !important;
+}
+
+@mixin visually-hidden() {
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  @include opacity(0);
+}
+
+@mixin visually-visible($max-height: 100rem) {
+  height: auto;
+  max-height: $max-height;
+  overflow: visible;
+  visibility: visible;
+  @include opacity(1);
+}

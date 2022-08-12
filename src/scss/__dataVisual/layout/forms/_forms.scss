@@ -1,0 +1,321 @@
+//
+//  Layout -> Forms 
+// --------------------------------------------------
+.t-form-control {
+  background-color: $white;
+  border: 2px solid $border;
+  @include border-radius($input-btn-radius);
+  font-size: $input-btn-font-size;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  text-align: left;
+  text-align-last: left;
+  transition: $transition-input;
+
+  @include placeholder;
+
+  @include ie {
+    // line-height: 1;
+    // padding: .75rem .875rem;
+  }
+
+  &:focus {
+    border-color: rgba($primary, 0.66);
+    box-shadow: 0 0 0 3px rgba($primary, 0.24);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &[disabled],
+  &[readonly] {
+    opacity: .66;
+    border: 2px solid $border-g;
+  }
+
+  &[type=file] {
+    overflow: hidden;
+    color: $lightgrey;
+
+    &:not(:disabled):not([readonly]) {
+      cursor: pointer;
+    }
+
+    &::file-selector-button {
+      padding: .75rem 1.8125rem;
+      margin: -.75rem -1.8125rem;
+      margin-inline-end: 1.8125rem;
+      color: $grey;
+      background-color: $white;
+      pointer-events: none;
+      border-color: inherit;
+      border-style: solid;
+      border-width: 0;
+      border-inline-end-width: .0625rem;
+      border-radius: 0;
+      transition: $transition-base;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+
+    &::-webkit-file-upload-button {
+      padding: .75rem 1.8125rem;
+      margin: -.75rem -1.8125rem;
+      margin-inline-end: 1.8125rem;
+      color: $grey;
+      background-color: $white;
+      pointer-events: none;
+      border-color: inherit;
+      border-style: solid;
+      border-width: 0;
+      border-inline-end-width: .0625rem;
+      border-radius: 0;
+      transition: $transition-base;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+
+    &:hover {
+      color: $grey;
+
+      &:not(:disabled) {
+        &:not([readonly]) {
+          &::file-selector-button {
+            background-color: rgba($grey, 0.12);
+          }
+
+          &::-webkit-file-upload-button {
+            background-color: rgba($grey, 0.12);
+          }
+        }
+      }
+    }
+
+    &:focus {
+      color: $grey;
+      background-color: $white;
+      border-color: rgba($grey, 0.24);
+      outline: 0;
+      box-shadow: 0 0 1rem 0 rgba($grey, 0.24);
+    }
+  }
+
+  &[type="number"] {
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+
+    &:hover,
+    &:focus {
+      appearance: number-input;
+    }
+  }
+
+  @at-root select#{&} {
+    appearance: none;
+    @include svg-bg-icon(arrow-bottom, $primary, right 1rem center, 0.625rem 50%);
+    cursor: pointer;
+    padding-right: 2.5rem;
+    user-select: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+}
+  // textarea {
+  //   appearance: none;
+  //   position: relative;
+  //   background-color: $dark--neu-background;
+  //   border: 2px solid rgba($white, 0);
+  //   border-radius: 12px;
+  //   box-shadow: $dark--neu-shadows;
+  //   color: rgba($white, 0.72);
+  //   font-size: 1.125rem;
+  //   height: calc(100% + 4px);
+  //   width: 100%;
+  //   outline: 0 solid rgba($primary-100, 0.08);
+  //   padding: 1rem 1.5rem;
+  //   transition: all 0.125s ease-in-out;
+
+  //   &:focus {
+  //     background-color: $dark--neu-background-focus;
+  //     box-shadow: $dark--neu-shadows-focus;
+  //     outline: 4px solid rgba($primary-100, 0.02);
+  //     outline-offset: 0;
+  //   }
+
+  //   &[disabled],
+  //   &[readonly] {
+  //     background-color: $dark--neu-background-disabled;
+  //     opacity: 0.66;
+  //     box-shadow: $dark--neu-shadows-focus-disabled;
+  //     border: 2px solid rgba($white, 0.02);
+  //   }
+
+  //   &::placeholder {
+  //     color: $dark--neu-placeholder;
+  //   }
+
+  //   &[type="number"] {
+  //     appearance: textfield;
+
+  //     &::-webkit-outer-spin-button,
+  //     &::-webkit-inner-spin-button {
+  //       appearance: none;
+  //       margin: 0;
+  //     }
+
+  //     &:hover,
+  //     &:focus {
+  //       appearance: number-input;
+  //     }
+  //   }
+  // }
+
+.t-form {
+  &-group {
+    margin-bottom: 1.5rem;
+  }
+
+  &-check {
+    margin-bottom: 1.25rem;
+  }
+
+  &-col {
+    @include in-bk-mid;
+  }
+
+  &-control.t-form-control {
+    display: block;
+    width: 100%;
+
+    &--md {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+    }
+
+    &.is-valid {
+      padding-right: 2.75rem;
+      border-color: $success;
+    }
+
+    &.is-invalid {
+      padding-right: 2.75rem;
+      border-color: $danger;
+    }
+  }
+}
+
+.complate-list {
+  margin-bottom: .5rem;
+}
+
+.was-validated {
+  .form-control {
+
+    &:valid~.valid-tooltip,
+    &:invalid~.invalid-tooltip {
+      display: inline-block;
+    }
+
+    &:valid {
+      padding-right: 2.75rem;
+      border-color: $success;
+    }
+
+    &:invalid {
+      padding-right: 2.75rem;
+      border-color: $danger;
+    }
+  }
+}
+
+.invalid-tooltip {
+  line-height: 1.45;
+  max-width: 100%;
+
+  @include border-radius(0.25rem);
+  @include absolute($T: 0, $R: 0);
+
+  font-size: $font-size-xxs;
+  margin-top: .1rem;
+  padding: .25rem .5rem;
+  color: $white;
+  background-color: $danger;
+}
+
+.valid-tooltip {
+  line-height: 1.45;
+  max-width: 100%;
+
+  @include border-radius(0.25rem);
+  @include absolute($T: 0, $R: 0);
+
+  font-size: $font-size-xxs;
+  margin-top: .1rem;
+  padding: .25rem .5rem;
+  color: $white;
+  background-color: $success;
+}
+
+.field-validation-error {
+  @extend .invalid-tooltip;
+}
+
+.field-validation-success {
+  @extend .valid-tooltip;
+}
+
+.input-validation {
+  &-error {
+    border-color: $danger;
+  }
+
+  &-success {
+    border-color: $success;
+  }
+}
+
+// #{$text-inputs-list} {
+//   background-color: #F5F5F5;
+//   border: 2px #F5F5F5 solid;
+
+//   @include border-radius(4px);
+
+//   font-size: .9375rem;
+//   padding: $input-btn-padding-y $input-btn-padding-x;
+//   transition: $transition-input;
+
+//   &:focus {
+//     border-color: rgba($primary, 0.8);
+
+//     // box-shadow: 0 0 3px 0 $primary;
+
+//   }
+
+//   @include ie {
+//     line-height: 1;
+//     padding: .75rem .875rem;
+//   }
+
+//   &[disabled] {
+//     cursor: not-allowed;
+//   }
+
+//   &[disabled],
+//   &[readonly] {
+//     opacity: .66;
+//     border: 1px solid #DEE2E6;
+//   }
+// }

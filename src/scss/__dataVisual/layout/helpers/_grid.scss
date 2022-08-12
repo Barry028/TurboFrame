@@ -1,0 +1,93 @@
+//
+//  Layout -> Grid 
+// --------------------------------------------------
+.container {
+  max-width: $container-xl;
+  @include container-fixed;
+
+  @media (max-width: $screen-lg-min) {
+    max-width: $container-lg;
+  }
+
+  @media (max-width: $screen-md-min) {
+    max-width: $container-md;
+  }
+
+  @media (max-width: $screen-sm-min) {
+    max-width: $container-sm;
+  }
+
+  @media (max-width: $screen-xs-min) {
+    max-width: $container-xs;
+  }
+}
+// Fluid container
+.container-fluid {
+  @include container-fixed;
+}
+// Row
+.row {
+  @include make-row;
+}
+
+
+@include make-grid(xl);
+
+// Large grid
+@media (max-width: $screen-lg-min) {
+  @include make-grid(lg);
+}
+// Medium grid
+@media (max-width: $screen-md-min) {
+  @include make-grid(md);
+}
+// Small grid
+@media (max-width: $screen-sm-min) {
+  @include make-grid(sm);
+}
+// Extra small grid
+@media (max-width: $screen-xs-min) {
+  @include make-grid(xs);
+}
+// Columns
+@include make-grid-columns;
+
+// .cf {
+//   @include clearfix;
+// }
+// %cf {
+//   @include clearfix;
+// }
+
+.clear-fix {
+  @include clearfix;
+}
+
+
+@media (max-width: $screen-xl-min) {
+  .clear-fix-xl {
+    @include clearfix;
+  }
+}
+
+@media (max-width: $screen-lg-min) {
+  .clear-fix-lg {
+    @include clearfix;
+  }
+}
+@media (max-width: $screen-md-min) {
+  .clear-fix-md {
+    @include clearfix;
+  }
+}
+@media (max-width: $screen-sm-min) {
+  .clear-fix-sm {
+    @include clearfix;
+  }
+}
+@media (max-width: $screen-xs-min) {
+  .clear-fix-xs {
+    @include clearfix;
+  }
+}
+

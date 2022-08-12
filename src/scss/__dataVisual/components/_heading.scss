@@ -1,0 +1,83 @@
+//
+//  Components -> Headings 
+// --------------------------------------------------
+.heading {
+  @include in-bk-mid;
+
+  margin-bottom: .25rem;
+
+  h3 {
+    @include in-bk-mid;
+
+    font-size: 1.25rem;
+    margin-right: 3rem;
+    letter-spacing: 2px;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      background-image: linear-gradient(to top, #e4f3fd 15%, rgba($black, 0) 40%);
+
+      @include size($width: 100%);
+      @include absolute($B: 0.125rem, $L: 0);
+
+      transform: rotate(-2deg);
+      z-index: -1;
+    }
+  }
+}
+
+.heading-icon-block {
+  @include in-bk-mid;
+
+  margin-right: .75rem;
+
+  .dot {
+    @include border-radius(100%);
+
+    @include absolute;
+
+  }
+
+  .dot-1 {
+    background-color: #e4f3fd;
+
+    @include size($width: 1.25rem);
+
+    left: 0;
+    top: 1rem;
+  }
+
+  .dot-2 {
+    background-color: #ffeaee;
+
+    @include size($width: 0.75rem);
+
+    right: .5rem;
+    top: 0;
+  }
+
+  .dot-3 {
+    background-color: #e4f3fd;
+
+    @include size($width: 0.625rem);
+
+    right: .5rem;
+    bottom: .5rem;
+  }
+
+  .dot-4 {
+    background-color: #ffeaee;
+
+    @include size($width: 1.5rem);
+
+    left: -.125rem;
+    top: 0;
+  }
+
+  .heading-icon {
+    font-size: 2.25rem;
+    color: $lightgrey;
+    z-index: 1;
+  }
+}

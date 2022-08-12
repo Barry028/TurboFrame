@@ -1,0 +1,7 @@
+
+//   Mixins > Text
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin title {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight-bold;
+}

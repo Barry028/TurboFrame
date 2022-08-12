@@ -1,0 +1,33 @@
+//
+// Components -> Size
+// --------------------------------------------------
+@for $index from 0 through $grid-columns {
+  .w-col-#{$index * 1} {
+    width: percentage(($index / $grid-columns));
+  }
+
+  %w-col-#{$index * 1} {
+    width: percentage(($index / $grid-columns));
+  }
+}
+
+
+@for $i from 0 through 20 {
+  .w-#{$i * 4} {
+    width: unquote("#{$i * 0.25}rem !important");
+  }
+
+  %w-#{$i * 4} {
+    width: unquote("#{$i * 0.25}rem");
+  }
+}
+
+@for $i from 0 through 20 {
+  .h-#{$i * 4} {
+    height: unquote("#{$i * 0.25}rem !important");
+  }
+
+  %h-#{$i * 4} {
+    height: unquote("#{$i * 0.25}rem");
+  }
+}

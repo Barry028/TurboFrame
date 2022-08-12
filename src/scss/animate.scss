@@ -1,0 +1,102 @@
+////////////////////////////////////////////////////////////
+// Import everything to generate your animate sass module //
+////////////////////////////////////////////////////////////
+@charset "utf-8";
+
+@import "_animations/_helpers/mixins";
+@import "_animations/_helpers/settings";
+@import "_animations/_helpers/base";
+
+// ATTENTION
+@import "_animations/attention-seekers/bounce";
+@import "_animations/attention-seekers/flash";
+@import "_animations/attention-seekers/pulse";
+@import "_animations/attention-seekers/shake";
+@import "_animations/attention-seekers/swing";
+@import "_animations/attention-seekers/wiggle";
+@import "_animations/attention-seekers/wobble";
+@import "_animations/attention-seekers/tada";
+
+// BOUNCE
+@import "_animations/bounce-enter/bounceIn";
+@import "_animations/bounce-enter/bounceInDown";
+@import "_animations/bounce-enter/bounceInLeft";
+@import "_animations/bounce-enter/bounceInRight";
+@import "_animations/bounce-enter/bounceInUp";
+@import "_animations/bounce-exit/bounceOut";
+@import "_animations/bounce-exit/bounceOutDown";
+@import "_animations/bounce-exit/bounceOutLeft";
+@import "_animations/bounce-exit/bounceOutRight";
+@import "_animations/bounce-exit/bounceOutUp";
+
+// FADE
+@import "_animations/fade-enter/fadeIn";
+@import "_animations/fade-enter/fadeInDown";
+@import "_animations/fade-enter/fadeInDownBig";
+@import "_animations/fade-enter/fadeInLeft";
+@import "_animations/fade-enter/fadeInLeftBig";
+@import "_animations/fade-enter/fadeInRight";
+@import "_animations/fade-enter/fadeInRightBig";
+@import "_animations/fade-enter/fadeInUp";
+@import "_animations/fade-enter/fadeInUpBig";
+@import "_animations/fade-exit/fadeOut";
+@import "_animations/fade-exit/fadeOutDown";
+@import "_animations/fade-exit/fadeOutDownBig";
+@import "_animations/fade-exit/fadeOutLeft";
+@import "_animations/fade-exit/fadeOutLeftBig";
+@import "_animations/fade-exit/fadeOutRight";
+@import "_animations/fade-exit/fadeOutRightBig";
+@import "_animations/fade-exit/fadeOutUp";
+@import "_animations/fade-exit/fadeOutUpBig";
+
+// FLIP
+@import "_animations/flippers/flip";
+@import "_animations/flippers/flipInX";
+@import "_animations/flippers/flipInY";
+@import "_animations/flippers/flipOutX";
+@import "_animations/flippers/flipOutY";
+
+// LIGHTSPEED
+@import "_animations/lightspeed/lightSpeedIn";
+@import "_animations/lightspeed/lightSpeedOut";
+
+// ROTATE
+@import "_animations/rotate-enter/rotateIn";
+@import "_animations/rotate-enter/rotateInDownLeft";
+@import "_animations/rotate-enter/rotateInDownRight";
+@import "_animations/rotate-enter/rotateInUpLeft";
+@import "_animations/rotate-enter/rotateInUpRight";
+@import "_animations/rotate-exit/rotateOut";
+@import "_animations/rotate-exit/rotateOutDownLeft";
+@import "_animations/rotate-exit/rotateOutDownRight";
+@import "_animations/rotate-exit/rotateOutUpLeft";
+@import "_animations/rotate-exit/rotateOutUpRight";
+
+// SLIDER IN
+@import "_animations/slide-enter/slideInDown";
+@import "_animations/slide-enter/slideInLeft";
+@import "_animations/slide-enter/slideInRight";
+@import "_animations/slide-enter/slideInUp";
+
+// SLIDER OUT
+@import "_animations/slide-exit/slideOutDown";
+@import "_animations/slide-exit/slideOutLeft";
+@import "_animations/slide-exit/slideOutRight";
+@import "_animations/slide-exit/slideOutUp";
+
+// SPECIAL
+@import "_animations/special/hinge";
+@import "_animations/special/rollIn";
+@import "_animations/special/rollOut";
+
+// ZOOM
+@import "_animations/zoom-enter/zoomIn";
+@import "_animations/zoom-enter/zoomInDown";
+@import "_animations/zoom-enter/zoomInLeft";
+@import "_animations/zoom-enter/zoomInRight";
+@import "_animations/zoom-enter/zoomInUp";
+@import "_animations/zoom-exit/zoomOut";
+@import "_animations/zoom-exit/zoomOutDown";
+@import "_animations/zoom-exit/zoomOutLeft";
+@import "_animations/zoom-exit/zoomOutRight";
+@import "_animations/zoom-exit/zoomOutUp";

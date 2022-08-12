@@ -1,0 +1,12 @@
+// 
+//  Components -> Roundeds
+// --------------------------------------------------
+@for $i from 0 through 25 {
+    .rounded--#{$i * 4} {
+        border-radius: #{$i * 4}px !important;
+    }
+
+    %rounded--#{$i * 4} {
+        border-radius: #{$i * 4}px !important;
+    }
+}

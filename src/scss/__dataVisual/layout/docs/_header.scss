@@ -1,0 +1,153 @@
+//
+//  Layout -> Header 
+// --------------------------------------------------
+.backend-header {
+  position: relative;
+  background-color: lighten($white, 0%);
+  border-top: 3px solid $primary;
+  border-bottom: 2px solid $primary;
+  box-shadow: $shadow-header;
+  z-index: $zindex-header;
+
+  .header-group {
+    display: table;
+    width: 100%;
+    text-align: justify;
+    text-align-last: justify;
+    white-space: nowrap;
+    .header-group-lt {
+      @include tb-cell-mid;
+
+      .header-logo {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+
+        .logo-img {
+          display: block;
+          height: 2.375rem;
+          transition: $transition-base;
+
+          &:hover {
+            @include opacity(0.8);
+          }
+
+          @media all and (max-width: $screen-lg-min) {
+            height: 2.25rem;
+          }
+        }
+      }
+    }
+
+    .header-group-rt {
+      @include tb-cell-mid;
+
+      .header-tools {
+        position: relative;
+        text-align: right;
+        text-align-last: right;
+        font-size: 0;
+
+        .header-tools-item {
+          text-align-last: center;
+          text-align: center;
+
+          @include in-bk-mid;
+
+          &:not(:last-child) {
+            margin-right: .75rem;
+          }
+        }
+
+        .dropdown-user-menu {
+          position: relative;
+          padding: .25rem 0;
+          .dropdown-toggle {
+            background-color: $primary-50;
+            cursor: pointer;
+            border: transparent;
+            border-radius: 6px;
+            padding: 0 1rem;
+            transition: $transition-base;
+
+            .avatar-container {
+              position: relative;
+              background-color: rgba($white, 1);
+              border: 2px solid rgba($white, 0.24);
+              border-radius: 50%;
+              box-shadow: 2px 2px 1px 0 rgba($dark, 0.12);
+              display: inline-block;
+              vertical-align: middle;
+              width: 3rem;
+              height: 3rem;
+              overflow: hidden;
+
+              .avatar-img {
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              }
+
+            }
+
+            .user-description {
+              text-align: left;
+              text-align-last: left;
+              margin-left: 1rem;
+              margin-right: 1rem;
+              padding: 0.375rem 0;
+
+              @include in-bk-mid;
+
+              .user-description-unit {
+                color: $grey;
+                font-size: 0.8125rem;
+              }
+
+              .user-description-txts {
+                font-size: 1rem;
+                font-weight: 500;
+              }
+            }
+          }
+
+          &:hover {
+            .dropdown-toggle {
+              background-color: $primary-400;
+              color: $white;
+
+              .user-description {
+                .user-description-unit {
+                  color: $white;
+                }
+
+                .user-description-txts {}
+              }
+            }
+          }
+
+          &.show {
+            .dropdown-toggle {
+              background-color: darken($primary, 14%);
+              color: $white;
+
+              .user-description {
+                .user-description-unit {
+                  color: $white;
+                }
+
+                .user-description-txts {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

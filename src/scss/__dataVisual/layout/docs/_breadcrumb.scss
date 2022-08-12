@@ -1,0 +1,47 @@
+//
+//  Layout -> Breadcrumbs 
+// --------------------------------------------------
+.backend-page-breadcrumbs {
+  font-size: 0;
+  margin-top: .75rem;
+
+  .backend-page-breadcrumbs-item {
+    position: relative;
+    color: $grey;
+    font-size: 1rem;
+    @include in-bk-mid;
+
+    &:first-child {
+    	padding-left: 1.625rem;
+      &:before {
+        content: '';
+        @include svg-bg-icon(home, $primary-600);
+        opacity: .66;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    &:not(:first-child) {
+      &:before {
+        content: '';
+        @include svg-bg-icon(arrow-end, $lightgrey);
+        opacity: .66;
+        position: absolute;
+        top: 50%;
+        left: -1.5rem;
+        transform: translateY(-50%);
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}

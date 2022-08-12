@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Dashboard Styles </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" href="../../../dist/css/gulp/all.css" media="screen"> -->
+  <link rel="stylesheet" type="text/css" href="../../../dist/css/gulp/doc_listPage.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../../../dist/icons/t-slim-icon/t-slim-icon.css" media="screen">
+  <script type="text/javascript" src="js/_src/jsGlobal.js"></script>
+  <!--  -->
+  <script type="text/javascript" src="js/TurboFrame.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Prototype.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Ready.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Core.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Fragments.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Resize.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Browser.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Util.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Functions.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Elements.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_String.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Events.js"></script>
+  <script type="text/javascript" src="js/TurboFrame_Ajax.js"></script>
+  <!-- <script type="text/javascript" src="js/_src/TurboFrame_RegExp.js"></script> -->
+  <!-- <script src="../dist/js/turframe_bundle..js"></script> -->
+    <link href="../../fonts/MockFlowFont/MockFlowFont1/dist/styles.css" rel="stylesheet">
+  <link href="../../fonts/MockFlowFont/MockFlowFont2/dist/styles.css" rel="stylesheet">
+  <style>
+    body{
+          font-family: "MockFlowFont1";    }
+  </style>
+</head>
+
+<body>
+ <main>
+  <div class="container">
+    <section class="dashboard">
+      <header class="booking-bar">
+        <div class="booking-bar__info">
+          <h2 class="booking-bar__heading">Barcelona (BCN) - Rome (ROM)</h2>
+          <p class="booking-bar__sub-heading">1 adult - Economy</p>
+        </div>
+        <!-- /.booking-bar__info -->
+        <div class="booking-bar__inputs">
+          <div class="icon-input">
+            <i class="icon-input__icon far fa-calendar-alt"></i>
+            <input type="text" placeholder="Departure Date" value="Thursday, April 2">
+          </div>
+          <div class="icon-input">
+            <i class="icon-input__icon far fa-calendar-alt"></i>
+            <input type="text" placeholder="Return Date">
+          </div>
+        </div>
+        <!-- booking-bar__inputs -->
+      </header>
+
+      <section class="flights">
+        <header>
+          <p class="flights__total">183 <span>results</span></p>
+          <section class="top-flights">
+            <div class="top-flight-card">
+              <p class="top-flight-card__price styled-price"><sup>$</sup>34</p>
+              <div class="top-flight-card__info">
+                <p class="top-flight-card__heading">Cheapest</p>
+                <p class="top-flight-card__sub-heading">2h 37m average</p>
+              </div>
+              <!-- /.top-flight-card__info -->
+            </div>
+            <!-- /.top-flight-card -->
+            <div class="top-flight-card is-active">
+              <p class="top-flight-card__price styled-price"><sup>$</sup>56</p>
+              <div class="top-flight-card__info">
+                <p class="top-flight-card__heading">Best</p>
+                <p class="top-flight-card__sub-heading">1h 50m average</p>
+              </div>
+              <!-- /.top-flight-card__info -->
+            </div>
+            <!-- /.top-flight-card -->
+            <div class="top-flight-card">
+              <p class="top-flight-card__price styled-price"><sup>$</sup>93</p>
+              <div class="top-flight-card__info">
+                <p class="top-flight-card__heading">Fastest</p>
+                <p class="top-flight-card__sub-heading">1h 27m average</p>
+              </div>
+              <!-- /.top-flight-card__info -->
+            </div>
+            <!-- /.top-flight-card -->
+            <div class="top-flight-card">
+              <p class="top-flight-card__price styled-price"><sup>$</sup>58</p>
+              <div class="top-flight-card__info">
+                <p class="top-flight-card__heading">Fly Greener</p>
+                <p class="top-flight-card__sub-heading">2h 42m average</p>
+              </div>
+              <!-- /.top-flight-card__info -->
+            </div>
+            <!-- /.top-flight-card -->
+          </section>
+        </header>
+        
+        <section class="flights-list">
+          <article class="flight-card flights-list__item">
+            <div class="flight-card__airlines">
+              <div class="flight-card__airline">
+                <img src="//unsplash.it/30/30" alt="">
+              </div>
+              <!-- /.flight-card__airline -->
+              <div class="flight-card__airline">
+                <img src="//unsplash.it/30/30" alt="">
+              </div>
+              <!-- /.flight-card__airline -->
+            </div>
+            <!-- /.flight-card__airlines -->
+            <div class="flight-card__departure">
+              <time class="flight-card__time">10:30 AM</time>
+              <h2 class="flight-card__city">Barcelona</h2>
+              <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+            </div>
+            <!-- /.flight-card__departure -->
+            <div class="flight-card__route">
+              <p class="flight-card__duration">1hr 50m</p>
+              <div class="flight-card__route-line route-line" aria-hidden="true">
+                <div class="route-line__stop route-line__start" aria-hidden="true"></div>
+                <!-- /.route-line__start -->
+                <div class="route-line__stop route-line__end" aria-hidden="true"></div>
+                <!-- /.route-line__start -->
+              </div>
+              <!-- flight-card__route-line -->
+              <p class="flight-card__type">Non-stop</p>
+            </div>
+            <div class="flight-card__arrival">
+              <time class="flight-card__time">10:30 AM</time>
+              <h2 class="flight-card__city">Rome</h2>
+              <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+            </div>
+            <!-- /.flight-card__arrival -->
+            <div class="flight-card__action">
+              <p class="flight-card__price styled-price"><sup>$</sup>93<sub>USD</sub></p>
+              <button class="flight-card__cta button button--orange">Select</button>
+            </div>
+            <!-- /.flight-card__action -->
+          </article>
+          <!-- /.flight-card -->
+          <article class="flight-card flights-list__item">
+            <div class="flight-card__airlines">
+              <div class="flight-card__airline">
+                <img src="//unsplash.it/30/30" alt="">
+              </div>
+              <!-- /.flight-card__airline -->
+              <div class="flight-card__airline">
+                <img src="//unsplash.it/30/30" alt="">
+              </div>
+              <!-- /.flight-card__airline -->
+            </div>
+            <!-- /.flight-card__airlines -->
+            <div class="flight-card__departure">
+              <time class="flight-card__time">7:45 AM</time>
+              <h2 class="flight-card__city">Barcelona</h2>
+              <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+            </div>
+            <!-- /.flight-card__departure -->
+            <div class="flight-card__route">
+              <p class="flight-card__duration">7hr 55m</p>
+              <div class="flight-card__route-line route-line" aria-hidden="true">
+                <div class="route-line__stop route-line__start" aria-hidden="true"></div>
+                <!-- /.route-line__start -->
+                <div class="route-line__stop route-line__end" aria-hidden="true"></div>
+                <!-- /.route-line__start -->
+                <div class="route-line__stop" aria-hidden="true" style="left: 50%">
+                  <p class="route-line__stop-name">VIE</p>
+                </div>
+              </div>
+              <!-- flight-card__route-line -->
+            </div>
+            <div class="flight-card__arrival">
+              <time class="flight-card__time">3:40PM</time>
+              <h2 class="flight-card__city">Rome</h2>
+              <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+            </div>
+            <!-- /.flight-card__arrival -->
+            <div class="flight-card__action">
+              <p class="flight-card__price styled-price"><sup>$</sup>68<sub>USD</sub></p>
+              <button class="flight-card__cta button button--orange">Select</button>
+            </div>
+            <!-- /.flight-card__action -->
+          </article>
+          <!-- /.flight-card -->
+          <article class="flight-card flights-list__item">
+            <div class="flight-card__airlines">
+              <div class="flight-card__airline">
+                <img src="//unsplash.it/30/30" alt="">
+              </div>
+              <!-- /.flight-card__airline -->
+              <div class="flight-card__airline">
+                <img src="//unsplash.it/30/30" alt="">
+              </div>
+              <!-- /.flight-card__airline -->
+            </div>
+            <!-- /.flight-card__airlines -->
+            <div class="flight-card__departure">
+              <time class="flight-card__time">10:35 AM</time>
+              <h2 class="flight-card__city">Barcelona</h2>
+              <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+            </div>
+            <!-- /.flight-card__departure -->
+            <div class="flight-card__route">
+              <p class="flight-card__duration">17hr 15m</p>
+              <div class="flight-card__route-line route-line" aria-hidden="true">
+                <div class="route-line__stop route-line__start" aria-hidden="true"></div>
+                <!-- /.route-line__start -->
+                <div class="route-line__stop route-line__end" aria-hidden="true"></div>
+                <!-- /.route-line__start -->
+                <div class="route-line__stop" aria-hidden="true" style="left: 25%">
+                  <p class="route-line__stop-name">PMI</p>
+                </div>
+                <!-- /.route-line__stop -->
+                <div class="route-line__stop" aria-hidden="true" style="left: 75%">
+                  <p class="route-line__stop-name">VLC</p>
+                </div>
+                <!-- /.route-line__stop -->
+              </div>
+              <!-- flight-card__route-line -->
+            </div>
+            <div class="flight-card__arrival">
+              <time class="flight-card__time">3:50PM</time>
+              <h2 class="flight-card__city">Rome</h2>
+              <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+            </div>
+            <!-- /.flight-card__arrival -->
+            <div class="flight-card__action">
+              <p class="flight-card__price styled-price"><sup>$</sup>82<sub>USD</sub></p>
+              <button class="flight-card__cta button button--orange">Select</button>
+            </div>
+            <!-- /.flight-card__action -->
+          </article>
+          <!-- /.flight-card -->
+          <article class="flight-card flights-list__item">
+            <div class="flight-card__airlines">
+              <div class="flight-card__airline">
+                <img src="//unsplash.it/30/30" alt="">
+              </div>
+              <!-- /.flight-card__airline -->
+              <div class="flight-card__airline">
+                <img src="//unsplash.it/30/30" alt="">
+              </div>
+              <!-- /.flight-card__airline -->
+            </div>
+            <!-- /.flight-card__airlines -->
+            <div class="flight-card__departure">
+              <time class="flight-card__time">9:30 AM</time>
+              <h2 class="flight-card__city">Barcelona</h2>
+              <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+            </div>
+            <!-- /.flight-card__departure -->
+            <div class="flight-card__route">
+              <p class="flight-card__duration">14hr 25m</p>
+              <div class="flight-card__route-line route-line" aria-hidden="true">
+                <div class="route-line__stop route-line__start" aria-hidden="true"></div>
+                <!-- /.route-line__start -->
+                <div class="route-line__stop route-line__end" aria-hidden="true"></div>
+                <!-- /.route-line__start -->
+                <div class="route-line__stop" aria-hidden="true" style="left: 25%">
+                  <p class="route-line__stop-name">CGN</p>
+                </div>
+                <!-- /.route-line__stop -->
+                <div class="route-line__stop" aria-hidden="true" style="left: 75%">
+                  <p class="route-line__stop-name">KTW</p>
+                </div>
+                <!-- /.route-line__stop -->
+              </div>
+              <!-- flight-card__route-line -->
+            </div>
+            <div class="flight-card__arrival">
+              <time class="flight-card__time">11:55 PM</time>
+              <h2 class="flight-card__city">Rome</h2>
+              <time class="flight-card__day">Tuesday, Apr 22, 2020</time>
+            </div>
+            <!-- /.flight-card__arrival -->
+            <div class="flight-card__action">
+              <p class="flight-card__price styled-price"><sup>$</sup>91<sub>USD</sub></p>
+              <button class="flight-card__cta button button--orange">Select</button>
+            </div>
+            <!-- /.flight-card__action -->
+          </article>
+          <!-- /.flight-card -->
+        </section>
+
+      </section>
+
+      <aside class="user-card">
+        <figure class="user-card__avatar">
+          <img src="//picsum.photos/50/50" alt="">
+        </figure>
+        <div class="p user-card__heading">
+          Hello, <span class="user-card__name">Ford Prefect</span>
+        </div>
+      </aside>
+      <aside class="sidebar">
+        <section class="sidebar-section">
+          <button class="button button--purple sidebar__action">Get price alerts</button>
+        </section>
+        <!-- /.sidebar-section -->
+        
+        <section class="sidebar-section">
+          <h2 class="sidebar-section__heading">Stops</h2>
+          <ul class="choice-list">
+            <li class="choice-list__item">
+              <input id="checkbox-1" type="checkbox" class="checkbox" checked="checked">
+              <label for="checkbox-1">Non-stop</label>
+              <span class="choice-list__aside">$34</span>
+            </li>
+            <li class="choice-list__item">
+              <input id="checkbox-2" type="checkbox" class="checkbox">
+              <label for="checkbox-2">1 Stop</label>
+              <span class="choice-list__aside">$70</span>
+            </li>
+            <li class="choice-list__item">
+              <input id="checkbox-3" type="checkbox" class="checkbox">
+              <label for="checkbox-3">2+ Stops</label>
+              <span class="choice-list__aside">$98</span>
+            </li>
+          </ul>
+        </section>
+        <section class="sidebar-section">
+          <h2 class="sidebar-section__heading">Baggage</h2>
+          <ul class="choice-list">
+            <li class="choice-list__item">
+              <input id="checkbox-4" type="checkbox" class="checkbox">
+              <label for="checkbox-4">1 small bag</label>
+              <span class="choice-list__aside">$34</span>
+            </li>
+            <li class="choice-list__item">
+              <input id="checkbox-5" type="checkbox" class="checkbox" checked="checked">
+              <label for="checkbox-5">2 cabin bags</label>
+              <span class="choice-list__aside">$58</span>
+            </li>
+            <li class="choice-list__item">
+              <input id="checkbox-6" type="checkbox" class="checkbox">
+              <label for="checkbox-6">Checked-in bag</label>
+              <span class="choice-list__aside">$112</span>
+            </li>
+          </ul>
+        </section>
+        <section class="sidebar-section">
+          <h2 class="sidebar-section__heading">Airports</h2>
+          <ul class="choice-list">
+            <li class="choice-list__item">
+              <input id="checkbox-7" type="checkbox" class="checkbox">
+              <label for="checkbox-7">CIA</label>
+              <span class="choice-list__aside">Rome Ciampino</span>
+            </li>
+            <li class="choice-list__item">
+              <input id="checkbox-8" type="checkbox" class="checkbox" checked="checked">
+              <label for="checkbox-8">FCO</label>
+              <span class="choice-list__aside">Rome Fiumicino</span>
+            </li>
+          </ul>
+        </section>
+      </aside>
+    </section>
+    <!-- /.dashboard -->
+  </div>
+  <!-- /.container -->
+</main>
+  <script>
+  //$(document).ready(function() {
+  //$('.search-box').focus();
+  //});
+
+  const wrapper = document.querySelector(".wrapper");
+  const header = document.querySelector(".header");
+
+  wrapper.addEventListener("scroll", (e) => {
+    e.target.scrollTop > 30 ?
+      header.classList.add("header-shadow") :
+      header.classList.remove("header-shadow");
+  });
+
+  const toggleButton = document.querySelector(".dark-light");
+
+  toggleButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+
+  const jobCards = document.querySelectorAll(".job-card");
+  const logo = document.querySelector(".logo");
+  const jobLogos = document.querySelector(".job-logos");
+  const jobDetailTitle = document.querySelector(
+    ".job-explain-content .job-card-title"
+  );
+  const jobBg = document.querySelector(".job-bg");
+
+  jobCards.forEach((jobCard) => {
+    jobCard.addEventListener("click", () => {
+      const number = Math.floor(Math.random() * 10);
+      const url = `https://unsplash.it/640/425?image=${number}`;
+      jobBg.src = url;
+
+      const logo = jobCard.querySelector("svg");
+      const bg = logo.style.backgroundColor;
+      console.log(bg);
+      jobBg.style.background = bg;
+      const title = jobCard.querySelector(".job-card-title");
+      jobDetailTitle.textContent = title.textContent;
+      jobLogos.innerHTML = logo.outerHTML;
+      wrapper.classList.add("detail-page");
+      wrapper.scrollTop = 0;
+    });
+  });
+
+  logo.addEventListener("click", () => {
+    wrapper.classList.remove("detail-page");
+    wrapper.scrollTop = 0;
+    jobBg.style.background = bg;
+  });
+
+  //   // let func = new Function([arg1, arg2, ...argN], functionBody);
+  //   // let sum = new Function('a', 'b', 'return a + b');
+
+
+
+  // // let str = `{ "id": 10393, name: 'zhangxinxu', 'date': '2022-04-30' }`;
+  // // console.log(JSON.stringify(new Function('return ' + str)()));
+
+  // // console.log(aaa9)
+  //   var birds = [
+  //     { ID: "你酐001", "Bird_Name": "Eurasian Collared-Dove" },
+  //     { ID: "002", "Bird_Name": "Bald Eagle" },
+  //     { ID: "003", "Bird_Name": "Cooper's Hawk" }
+  //   ];
+  // // console.log(JSON.stringify(new Function('return ' + str)()));
+
+
+  //   // var dropDown = document.getElementById('docDashboard');
+  //   // var strInHtml = $("main").html();
+  //   // var birdss = JSON.stringify(birds);
+  //   // var birdss1 = JSON.parse(birdss);
+  //   // // var strInHtml1 = $.quote(strInHtml);
+  //   // console.log(strInHtml)
+
+  //   // // console.log(strInHtml1)  
+  //   // // console.log(birdss)
+  //   // // console.log(birdss1)
+  //   // for (var i = 0; i < birdss1.length; i++) {
+  //   //   // POPULATE SELECT ELEMENT WITH JSON.
+  //   //   // ele.innerHTML += '<option value="' + birds[i]['ID'] + '">' + birds[i]['Bird_Name'] + '</option>';
+  //   //   console.log(birdss[i]["ID"])
+  //   //   var aa = $.quote(birdss1[i]["ID"])
+  //   //   var sss = JSON.stringify(strInHtml);
+  //   //   console.log(sss)
+  //   //   var aa = $.stringBind(strInHtml, aa);
+  //   // }
+  //   // console.log(aa)
+  //   // // // var aa1 = JSON.stringify(aa)
+  //   // //   var aa1 =  JSON.parse($.stripScripts(aa));
+  //   // //   console.log(aa1)
+  //   // $("main").html(aa);
+  //   // var data = [
+  //   //   { name: "男", "name": "1月", "value": "00" },
+  //   //   { name: "女", "name": "1月", "value": "115" },
+  //   //   { "name": "男", "name": "2月", "value": "50" },
+  //   //   { "name": "女", "name": "2月", "value": "102" },
+  //   //   { "name": "男", "name": "3月", "value": "22" },
+  //   //   { "group": "女", "name": "3月", "value": "112" },
+  //   //   { "group": "男", "name": "4月", "value": "80" },
+  //   //   { "group": "女", "name": "4月", "value": "45" },
+  //   //   { "group": "男", "name": "5月", "value": "25" },
+  //   //   { "group": "女", "name": "5月", "value": "92" },
+  //   //   { "group": "男", "name": "6月", "value": "22" },
+  //   //   { "group": "女", "name": "6月", "value": "52" }
+  //   // ];
+
+
+
+  //   // $("#docDashboard").dataBind({
+  //   //   jsonData: data
+  //   // });
+
+
+
+  //   var RandomNum = function RandomNum(min, max) {
+  //     return Math.floor(Math.random() * (max - min + 1)) + min;
+  //   };
+
+  //   // var dataWithJson = [
+  //   //   { name: ["BarrY", "Teresa"], role: "帥哥" },
+  //   //   { name: "Teresa", role: "美牙" }
+  //   // ];
+  //   // var strInHtml = $("main").html();
+  //   // for (var i1 = 0; i1 < dataWithJson.length; i1++) {
+  //   //   // console.log(typeof strInHtml)
+  //   //   var aa = strInHtml.formateString(dataWithJson[0]);
+  //   //   // console.log(aa)
+
+  //   // };
+  //   // $("main").html(aa)
+
+  //   // $("img").each(function(i, val) {
+  //   //   var rand = RandomNum(0, 20);
+  //   //   var data = { nums: i + rand };
+  //   //   var str = 'https://avatars.dicebear.com/api/big-ears-neutral/s@(nums).svg';
+  //   //   $(this).attr("src", TurboFrame.stringBind(str, data));
+  //   // });
+
+  //   document.addEventListener('DOMContentLoaded', function() {
+  //     var modeSwitch = document.querySelector('.mode-switch');
+  //     var imgs = document.getElementsByTagName('img');
+
+
+  //     for (var i = 0; i < imgs.length; i++) {
+  //       var rand = RandomNum(0, 20);
+  //       var data = { nums: i + rand };
+  //       var str = 'https://avatars.dicebear.com/api/big-ears-neutral/s@(nums).svg';
+  //       var newSrc = $.stringBind(str, data);
+  //       imgs[i].setAttribute('src', newSrc);
+
+  //     }
+
+
+
+  //     modeSwitch.addEventListener('click', function() {
+  //       document.documentElement.classList.toggle('dark');
+  //       modeSwitch.classList.toggle('active');
+  //     });
+
+  //     var listView = document.querySelector('.list-view');
+  //     var gridView = document.querySelector('.grid-view');
+  //     var projectsList = document.querySelector('.project-boxes');
+
+  //     listView.addEventListener('click', function() {
+  //       gridView.classList.remove('active');
+  //       listView.classList.add('active');
+  //       projectsList.classList.remove('jsGridView');
+  //       projectsList.classList.add('jsListView');
+  //     });
+
+  //     gridView.addEventListener('click', function() {
+  //       gridView.classList.add('active');
+  //       listView.classList.remove('active');
+  //       projectsList.classList.remove('jsListView');
+  //       projectsList.classList.add('jsGridView');
+  //     });
+
+  //     document.querySelector('.messages-btn').addEventListener('click', function() {
+  //       document.querySelector('.messages-section').classList.add('show');
+  //     });
+
+  //     document.querySelector('.messages-close').addEventListener('click', function() {
+  //       document.querySelector('.messages-section').classList.remove('show');
+  //     });
+  //   });
+  </script>
+</body>
+
+</html>

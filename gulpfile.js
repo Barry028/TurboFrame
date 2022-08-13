@@ -147,7 +147,7 @@ function scssTask() {
 }
 
 // BABELES5 非同步 
-gulp.task("babelEs5", function() {
+gulp.task("babelEs5", function , () => {
   return Observable.return(
     babelEs5()
   );

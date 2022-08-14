@@ -7,7 +7,7 @@ const {
   watch,
   series
 } = require('gulp')
-  // const async = require('async');
+// const async = require('async');
 const gulp = require('gulp');
 
 const babel = require('gulp-babel');
@@ -127,7 +127,7 @@ gulp.task("sass", function() {
 
 function scssTask() {
   return src('./src/scss/*.scss')
-        .pipe(sourcemaps.init({
+    .pipe(sourcemaps.init({
       loadMaps: true
     }))
     .pipe(sass()) // expanded nested compact compressed
@@ -140,14 +140,14 @@ function scssTask() {
     // .pipe(sourcemaps.write('./')) // 生成 sourcemaps 文件 (.map)
     .pipe(sourcemaps.write('.', {
       sourceRoot: '../../../src/scss/'
-        // 寫入 Sourcemaps 到當前資料夾(以下下列 dest('assets/css')為基準點，
-        // SourceRoot：以匯出的資料夾為基準點找他原本的 scss 資料夾位置。
+      // 寫入 Sourcemaps 到當前資料夾(以下下列 dest('assets/css')為基準點，
+      // SourceRoot：以匯出的資料夾為基準點找他原本的 scss 資料夾位置。
     }))
     .pipe(dest('./dist/css/gulp'));
 }
 
 // BABELES5 非同步 
-gulp.task("babelEs5", function , () => {
+gulp.task("babelEs5", function() {
   return Observable.return(
     babelEs5()
   );
@@ -176,18 +176,18 @@ function babelEs5() {
     })
     .pipe(concat("turboframe_bundle.js"))
 
-  .pipe(babel({
-    presets: ['@babel/env'],
-    minified: true,
-  }))
+    .pipe(babel({
+      presets: ['@babel/env'],
+      minified: true,
+    }))
 
-  .pipe(minify({
+    .pipe(minify({
       mangle: {
         keepClassName: true
       }
     }))
     .pipe(dest('./dist/js'))
-    // 編譯完成輸出路徑
+  // 編譯完成輸出路徑
 }
 
 

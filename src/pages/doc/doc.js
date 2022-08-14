@@ -1,5 +1,5 @@
-import "../../scss/doc_dashboard_v1.scss";
-import '../../javascript/_all';
+import "../scss/all.scss";
+// import '../../javascript/_all';
 window.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver(entries => {

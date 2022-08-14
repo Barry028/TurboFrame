@@ -1,4 +1,4 @@
-import "../../scss/doc_dashboard_v2.scss";
-import '../../javascript/_all';
+import "../scss/doc_index.scss";
+// import '../../javascript/_all';
 
 

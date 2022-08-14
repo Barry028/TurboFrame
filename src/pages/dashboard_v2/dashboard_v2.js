@@ -1,6 +1,6 @@
-import "../../scss/doc_dashboard_v2.scss";
-import  '../../javascript/_all';
-fn();  
+import "../scss/doc_dashboard_v2.scss";
+// import  '../../javascript/_all';
+// fn();  
 // var styles = {"example":"_example_amfqe_1"};
 
 // // // var styles = require( "./scss/doc_dashboard.scss" );

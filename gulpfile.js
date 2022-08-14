@@ -126,7 +126,7 @@ gulp.task("sass", function() {
 });
 
 function scssTask() {
-  return src('./src/scss/*.scss')
+  return src('./src/pages/scss/*.scss')
     .pipe(sourcemaps.init({
       loadMaps: true
     }))

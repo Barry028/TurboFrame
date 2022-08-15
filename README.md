@@ -1,5 +1,55 @@
 #  Turboframe.js 
-#  壓縮完 35kb 支援 JQuery 大部分用法 (有缺或 Bug再跟我說) )
+
+檔案壓縮完成後大約 35KB (會再持續新增，目前還是以 ES5 寫法為主，瀏覽器支援落在 IE9 這個等級)，
+支援 JQuery 大部分用法 (有缺或 Bug再跟我說)
+
+
+1. TurboFrame.js                ===>   主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主
+
+$("selector") || TurboFrame("selector")
+* 支持  `Tag` , `#Id` , `.ClassName` , `Tag > .ClassName` , `Tag > Tag` , `#Id > Tag.ClassName` , `.ClassName Tag` ,
+        `Tag , Tag , #Id` , `Tag#Id.ClassName`  , `span > * > b` , `input[name=radio]` 
+  傳入，不支持::偽元素，返回 TurboFrame 對象 [Array]。
+
+
+* $("selector").eq(index)
+
+  傳入索引值，返回對應的節點的 TurboFrame 對象。
+
+* $("selector").find("selector")
+
+  返回相應後代節點的 TurboFrame 對象。
+
+  
+
+2. TurboFrame_Core.js           ===>   主要檔案
+
+3. TurboFrame_Prototype.js      ===>   主要檔案
+
+4. TurboFrame_Fragments.js      ===>   主要檔案
+
+5. TurboFrame_Ready.js          ===>   主要檔案
+
+--
+
+6. TurboFrame_Resize.js
+
+7. TurboFrame_Browser.js
+
+8. TurboFrame_Util.js
+
+9. TurboFrame_Elements.js
+
+10. TurboFrame_Events.js
+
+11. TurboFrame_String.js
+
+12. TurboFrame_Functions.js
+
+13. TurboFrame_Ajax.js
+
+
+---
 
 ## 初始化專案環境 
 
@@ -80,15 +130,6 @@ $ npm run build
 ## API 文檔
 
 ### 基礎選擇器
-
-* $(selector) 或  TurboFrame (selector)
-* 支持 (tag), (#id), (.className) ,(tag > .className) ,(tag > tag) ,(#id > tag.className) , (.className tag) ,(tag, tag, #id) ,(tag#id.className) ,(span > * > b) ,(input[name=radio])的傳入，不支持偽類，返回 TurboFrame 對象。
-
-* .eq(index)
-
-傳入索引值，返回對應的節點的 TurboFrame 對象。
-
-支持傳入負值，如：`$("a").eq(-1)`取最末尾節點。
 
 * .find(selector)
 

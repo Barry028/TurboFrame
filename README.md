@@ -1,6 +1,6 @@
 
 
-<img style="display: inline-block; vertical-align: top"  src="https://github.com/Barry028/TurboFrame/blob/main/shares/images/Turbotech/logo_v2.svg" width="50%" >
+<img style="display: inline-block; vertical-align: top"  src="https://github.com/Barry028/TurboFrame/blob/main/shares/images/Turbotech/logo_v11.svg" width="50%" >
 
 
 

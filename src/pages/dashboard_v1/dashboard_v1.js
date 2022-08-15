@@ -1,4 +1,4 @@
-import "../scss/doc_dashboard_v1.scss";
+import "../../scss/doc_dashboard_v1.scss";
     // import aaaaaa from '../../javascript/_all.js'; aaaaaa();
 // var styles = {"example":"_example_amfqe_1"};
 

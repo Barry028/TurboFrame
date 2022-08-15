@@ -120,6 +120,7 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-exclude-assets-plugin": "^0.1.1",
+    "webpack-merge": "^5.8.0",
     "webpack-merge-and-include-globally": "^2.3.4",
     "webpack-messages": "^2.0.4"
   }

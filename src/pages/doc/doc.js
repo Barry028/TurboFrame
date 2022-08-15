@@ -1,4 +1,4 @@
-import "../scss/all.scss";
+import "../../scss/all.scss";
 // import '../../javascript/_all';
 window.addEventListener('DOMContentLoaded', () => {
 

@@ -1,4 +1,4 @@
-import "../scss/doc_dashboard_v3.scss";
+import "../../scss/doc_dashboard_v3.scss";
 // import  '../../javascript/_all';
 // fn();  
 // var styles = {"example":"_example_amfqe_1"};

@@ -19,8 +19,10 @@ $("selector") || TurboFrame("selector")
 * $("selector").find("selector")
 
   返回相應後代節點的 TurboFrame 對象。
+<span style="color:blue">some *blue* text</span>.
 
   
+- - -
 
 2. TurboFrame_Core.js           ===>   主要檔案
 

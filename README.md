@@ -3,24 +3,43 @@
 檔案壓縮完成後大約 35KB (會再持續新增，目前還是以 ES5 寫法為主，瀏覽器支援落在 IE9 這個等級)，
 支援 JQuery 大部分用法 (有缺或 Bug再跟我說)
 
+```html
 
-1. TurboFrame.js                ===>   主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主
+<script src="./dist/js/TurboFrame.bunble.js"></script>
+
+```
+
+## 👉 [TurboFrame.js](https://github.com/Barry028/TurboFrame/blob/main/src/javascript/TurboFrame.js)
+
+主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主
+
+- - -
+
+```js
 
 $("selector") || TurboFrame("selector")
-* 支持  `Tag` , `#Id` , `.ClassName` , `Tag > .ClassName` , `Tag > Tag` , `#Id > Tag.ClassName` , `.ClassName Tag` ,
-        `Tag , Tag , #Id` , `Tag#Id.ClassName`  , `span > * > b` , `input[name=radio]` 
-  傳入，不支持::偽元素，返回 TurboFrame 對象 [Array]。
 
+```
 
-* $("selector").eq(index)
+🟢  支持  `Tag` , `#Id` , `.ClassName` , `Tag > .ClassName` , `Tag > Tag` , `#Id > Tag.ClassName` , `.ClassName Tag` ,
+         `Tag , Tag , #Id` , `Tag#Id.ClassName`  , `span > * > b` , `input[name=radio]` 
+          傳入，不支持 [::偽元素] ，返回 TurboFrame 對象 [Array]。
 
-  傳入索引值，返回對應的節點的 TurboFrame 對象。
+```js
 
-* $("selector").find("selector")
+$("selector").eq(index)
 
-  返回相應後代節點的 TurboFrame 對象。
-<span style="color:blue">some *blue* text</span>.
+```
 
+🟢  傳入索引值，返回對應的節點的 TurboFrame 對象。
+
+```js
+
+$("selector").find("selector")
+
+```
+🟢  返回相應後代節點的 TurboFrame 對象。
+   
   
 - - -
 
@@ -55,11 +74,17 @@ $("selector") || TurboFrame("selector")
 
 ## 初始化專案環境 
 
-* 確定 Node 已安裝
+* 確定 Node 已安裝 Webpack
+
+```bash
 
 $ npm - i
 
 $ npm run build
+
+$ npm gulp default
+
+```
 
 
 ## webpack

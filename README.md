@@ -1,5 +1,8 @@
 
-<img style="display: inline-block; vertical-align: top;" src='https://raw.githubusercontent.com/Barry028/TurboFrame/main/shares/images/Turbotech/logo_v2.svg?token=GHSAT0AAAAAABW3HS5WURRWDFCORWKKTTOKYX2OQMQ' width="60%"><img style="display: inline-block; vertical-align: top"  src="https://github.com/Barry028/TurboFrame/blob/main/shares/images/%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/bot-2.svg" width="18%" style="    position: absolute;" >
+
+<img style="display: inline-block; vertical-align: top"  src="https://github.com/Barry028/TurboFrame/blob/main/shares/images/Turbotech/logo_v2.svg" width="50%" >
+
+<img style="display: inline-block; vertical-align: top"  src="https://github.com/Barry028/TurboFrame/blob/main/shares/images/%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/bot-2.svg" width="18%">
 
 #  Turboframe.js 
 

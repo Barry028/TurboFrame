@@ -98,7 +98,7 @@ $ npm gulp default
 ## webpack
 [scss] scss   --> scss 處理、Css 相容（變數轉支援低階瀏覽器 var(--xxx)）
 
-[babel] Js    --> es5 轉 es6 放心用 Class Export ..
+[babel] Js    --> es5 轉 es6 
 
 [Html] Html   -->  
 

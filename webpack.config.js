@@ -49,42 +49,56 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [{
-        test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader, {
-            loader: "css-loader",
-            options: {
-              sourceMap: true,
-            },
-          }, {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-            },
-          }, {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-              implementation: require('sass'),
-              sassOptions: {
-                outputStyle: "expanded", // expanded compressed
-              },
+      test: /\.s[ac]ss$/i,
+      use: [
+        MiniCssExtractPlugin.loader, {
+          loader: "css-loader",
+          options: {
+            sourceMap: true,
+          },
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+          },
+        }, {
+          loader: "sass-loader",
+          options: {
+            sourceMap: true,
+            implementation: require('sass'),
+            sassOptions: {
+              outputStyle: "expanded", // expanded compressed
             },
           },
-        ],
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
+        },
+      ],
+    }, {
+      test: /\.css$/i,
+      use: [
+        {
+          loader: 'style-loader',
           options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['lodash']
-          }
+            injectType: 'singletonStyleTag', // 多個 CSS 合併為單一個 style 標籤
+            attributes: {
+              id: 'allCSS', // 附加 id 屬性並定義其值為 "allCSS"
+            },
+          },
+        },
+        'css-loader', {
+          loader: 'postcss-loader'
+        }
+      ],
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: ['lodash']
         }
       }
-    ]
+    }]
   },
   plugins: [
     new MiniCssExtractPlugin({

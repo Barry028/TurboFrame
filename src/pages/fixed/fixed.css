@@ -1,0 +1,321 @@
+:root {
+    --primary: #11ece5;
+    --secondary: #6A85EA;
+    --tertiary: #F7509F;
+    --quaternary: #F9F871;
+    --success: #9EF6AB;
+    --danger: #FF5042;
+    --danger_2: #B72D22;
+    --warning: #FF9A3E;
+    --info: #00D0FC;
+    --link: #4AF3DF;
+    --link-hover: #0892A9;
+    --bg: #000;
+    --dark: #0f1522;
+    --grey: #545479;
+    --lightgrey: #A6ABBD;
+    --light: #92abcf;
+    --white: #fff;
+    --bg: #E8F3F1;
+    --default: #E9FDFC;
+    --robbin: #EED202;
+    --robbin_2: #FFDF64;
+    --link: #4255ff;
+    --link-hover: #2c379d;
+    --bright: #eaeef6;
+    --green: #0abf53;
+    --teal: #077c76;
+    --blue: #334ac0;
+    --red: #692340;
+    --yellow: #f39568;
+    --danger-100: #fed0e1;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  html {
+    font-size: 16px;
+
+  }
+
+  @media(max-width: 1024px) {
+    html {
+      font-size: 15px
+    }
+  }
+
+  @media(max-width: 768px) {
+    html {
+      font-size: 14px
+    }
+  }
+
+  @media(max-width: 640px) {
+    html {
+      font-size: 13px
+    }
+  }
+
+  body {
+    background-color: var(--bright);
+    color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 2rem 0;
+    line-height: 1.5;
+  }
+
+  a {
+    color: var(--link);
+    transition: .125s color ease;
+  }
+
+  a:hover {
+    color: var(--link-hover);
+  }
+
+  h1 {
+    background: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(0, 0, 0, .25) 25px, rgba(0, 0, 0, .25) calc(2 * 25px));
+    margin-bottom: 1rem;
+    font-size: 2.75rem;
+    text-align: center;
+    color: var(--dark);
+    --danger-100: #D3D3D3;
+    text-shadow: 0.25px 0.25px var(--danger-100), 0.5px 0.5px var(--danger-100), 0.75px 0.75px var(--danger-100),
+      1px 1px var(--danger-100), 1.25px 1.25px var(--danger-100), 1.5px 1.5px var(--danger-100),
+      1.75px 1.75px var(--danger-100), 2px 2px var(--danger-100), 2.25px 2.25px var(--danger-100),
+      2.5px 2.5px var(--danger-100), 2.75px 2.75px var(--danger-100), 3px 3px var(--danger-100),
+      3.25px 3.25px var(--danger-100), 3.5px 3.5px var(--danger-100), 3.75px 3.75px var(--danger-100),
+      4px 4px var(--danger-100), 4.25px 4.25px var(--danger-100), 4.5px 4.5px var(--danger-100),
+      4.75px 4.75px var(--danger-100), 5px 5px var(--danger-100), 5.25px 5.25px var(--danger-100),
+      5.5px 5.5px var(--danger-100), 5.75px 5.75px var(--danger-100), 6px 6px var(--danger-100);
+
+  }
+
+  h2 {
+    color: var(--grey);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+  }
+
+  .container {
+    padding: 0 3rem 2rem;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(120deg);
+    }
+
+    100% {
+      transform: rotate(170deg);
+    }
+  }
+
+  @keyframes moveLeftArm {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(4deg);
+    }
+  }
+
+  @keyframes moveRightArm {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(-4deg);
+    }
+  }
+
+  @keyframes shadowAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+
+    100% {
+      transform: scale(1.15);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes verticalAnimation {
+    0% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes blinkLight {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blinkEye {
+    0% {
+      transform: scaleY(0);
+    }
+
+    4% {
+      transform: scaleY(1);
+    }
+  }
+
+  .logo-box {
+    position: absolute;
+    right: 1rem;
+    transform: translateY(1rem);
+    max-width: 24rem;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0 0px 48px -12px var(--lightgrey);
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .logo-box img {
+    object-fit: contain;
+    filter: grayscale(100%);
+    width: 100%;
+  }
+
+  .ribbon {
+    display: block;
+    position: relative;
+    background: var(--robbin);
+    padding: 0 4rem;
+    height: 2rem;
+    font-size: 1.375rem;
+
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .ribbon .lf,
+  .ribbon .rt {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70.9 55.5'%3E%3Cg data-name='Group 209446'%3E%3Cpath d='M38 55.5a2 2 0 0 1-1.4-.6 2 2 0 0 1-.6-1.4v-5l23.2-19.2a2 2 0 0 0 0-3.1L36 6.9V2a2 2 0 0 1 2-2 2 2 0 0 1 1.3.5l30.9 25.7a2 2 0 0 1 0 3L39.2 55a2 2 0 0 1-1.2.5Z' data-name='Subtraction 1'/%3E%3Cpath d='M20 55.5a2 2 0 0 1-1.4-.6 2 2 0 0 1-.6-1.4v-5l23.2-19.2a2 2 0 0 0 0-3.1L18 6.9V2a2 2 0 0 1 2-2 2 2 0 0 1 1.3.5l30.9 25.7a2 2 0 0 1 0 3L21.2 55a2 2 0 0 1-1.2.5Z' data-name='Subtraction 2'/%3E%3Cpath d='M2 55.5a2 2 0 0 1-1.4-.6 2 2 0 0 1-.6-1.4v-5l23.2-19.2a2 2 0 0 0 0-3.1L0 6.9V2a2 2 0 0 1 2-2 2 2 0 0 1 1.3.5l30.9 25.7a2 2 0 0 1 0 3L3.2 55a2 2 0 0 1-1.2.5Z' data-name='Subtraction 3'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    position: absolute;
+    top: 50%;
+
+
+    width: 8rem;
+    height: 120%;
+    z-index: 3;
+    opacity: 0.66;
+  }
+
+  .ribbon .lf {
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .ribbon .rt {
+    right: 0;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .ribbon strong {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-font-kerning: none;
+    font-kerning: none;
+    font-stretch: condensed;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    padding: 0;
+    background: var(--robbin);
+    z-index: 2;
+    -webkit-text-stroke: 0.75px var(--dark);
+    text-stroke: 0.75px var(--dark);
+  }
+
+  .ribbon strong::after,
+  .ribbon strong::before {
+    margin: 0;
+  }
+
+  .ribbon strong::before {
+    content: attr(data-before);
+  }
+
+  .ribbon strong::after {
+    content: attr(data-after);
+  }
+
+  .maintenance-section {
+    box-shadow: 1px 1px var(--lightgrey), 2px 2px var(--lightgrey), 3px 3px var(--lightgrey), 4px 4px var(--lightgrey),
+      5px 5px var(--lightgrey), 6px 6px var(--lightgrey), 7px 7px var(--lightgrey), 8px 8px var(--lightgrey), 9px 9px var(--lightgrey),
+      10px 10px var(--lightgrey), 12px 12px var(--lightgrey), 13px 13px var(--lightgrey), 14px 14px var(--lightgrey),
+      15px 15px var(--lightgrey), 16px 16px var(--lightgrey), 17px 17px var(--lightgrey), 18px 18px var(--lightgrey),
+      19px 19px var(--lightgrey), 20px 20px var(--lightgrey);
+    position: relative;
+    max-width: 80%;
+    border-radius: 2rem;
+    overflow: hidden;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--white);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2355.3 1695'%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='none' d='M0 0h2355.3v1695H0z' data-name='Rectangle 184906'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg data-name='Group 209444' opacity='1'%3E%3Cpath fill='%23d2d9e1' d='M176.2 271.6H205v319.7h-29z' data-name='Rectangle 184900'/%3E%3Cg data-name='Group 209443'%3E%3Cg clip-path='url(%23a)' data-name='Group 209442'%3E%3Cpath fill='%23e1e6eb' d='M176.2 690.4a28.9 28.9 0 0 1-28.9-28.9v-262a28.9 28.9 0 1 1 57.7 0v262a28.9 28.9 0 0 1-28.8 28.9' data-name='Path 250857'/%3E%3Cpath fill='%23f0f2f5' d='M316.3 667h-108V394h108a136.4 136.4 0 0 1 0 272.8' data-name='Path 250858'/%3E%3Cpath fill='%23e1e6eb' d='M440 588V473a34.6 34.6 0 0 1 34.6 34.6v45.6A34.6 34.6 0 0 1 440 588' data-name='Path 250859'/%3E%3Cpath fill='%23d2d9e1' d='M205 690.4V370.6a37.8 37.8 0 0 1 37.8 37.8v244.2a37.8 37.8 0 0 1-37.8 37.8' data-name='Path 250860'/%3E%3Cpath fill='%23e1e6eb' d='M105.3 489.7h70.9v-51h-70.9a25.5 25.5 0 0 0 0 51' data-name='Path 250861'/%3E%3Cpath fill='%23e1e6eb' d='M105.3 622.3h70.9v-51h-70.9a25.5 25.5 0 0 0 0 51' data-name='Path 250862'/%3E%3Cpath fill='%23f0f2f5' d='M114.6 489.7h70.8v-51h-70.8a25.5 25.5 0 0 0 0 51' data-name='Path 250863'/%3E%3Cpath fill='%23f0f2f5' d='M114.6 622.3h70.8v-51h-70.8a25.5 25.5 0 0 0 0 51' data-name='Path 250864'/%3E%3Cpath fill='%23d2d9e1' d='M2115.2 1282h28.9v319.7h-29z' data-name='Rectangle 184901'/%3E%3Cpath fill='%23e1e6eb' d='M2144 1601.7a28.9 28.9 0 0 0 28.9-28.8v-262a28.9 28.9 0 0 0-57.7 0v262a28.9 28.9 0 0 0 28.8 28.8' data-name='Path 250865'/%3E%3Cpath fill='%23f0f2f5' d='M2004 1578.3h108v-272.8h-108a136.4 136.4 0 0 0 0 272.8' data-name='Path 250866'/%3E%3Cpath fill='%23e1e6eb' d='M1880.2 1499.3v-114.8a34.6 34.6 0 0 0-34.6 34.5v45.7a34.6 34.6 0 0 0 34.6 34.6' data-name='Path 250867'/%3E%3Cpath fill='%23d2d9e1' d='M2115.2 1601.7V1282a37.8 37.8 0 0 0-37.8 37.8V1564a37.8 37.8 0 0 0 37.8 37.8' data-name='Path 250868'/%3E%3Cpath fill='%23d2d9e1' d='M2133.5 1350.1h21.2v51h-21.2z' data-name='Rectangle 184902'/%3E%3Cpath fill='%23d2d9e1' d='M2133.5 1482.7h21.2v50.9h-21.2z' data-name='Rectangle 184903'/%3E%3Cpath fill='%23e1e6eb' d='M1975.6 516.3h-1501v28.4H1966a9.5 9.5 0 0 1 9.5 9.4v397.7a9.5 9.5 0 0 1-9.5 9.5H271a28.3 28.3 0 0 0-28.3 28.3v438a28.3 28.3 0 0 0 28.4 28.4h1574.4v-28.3h-1565a9.5 9.5 0 0 1-9.4-9.5V999.1a9.5 9.5 0 0 1 9.4-9.5h1695a28.3 28.3 0 0 0 28.3-28.3V544.7a28.3 28.3 0 0 0-28.3-28.4' data-name='Path 250869'/%3E%3Cpath fill='%23f0f2f5' d='M2064.3 532.6a80 80 0 1 1-80-80 80 80 0 0 1 80 80' data-name='Path 250870'/%3E%3Cpath fill='%23fff' d='M2021.2 505.1 2010 494l-26.8 26.8-26.9-26.8-11.1 11.1L1972 532l-26.9 26.8 11.2 11.2 26.9-26.9L2010 570l11.2-11.2-26.9-26.8Z' data-name='Path 250871'/%3E%3Cpath fill='%23f0f2f5' d='M337.8 978.5a80 80 0 1 1-80-80 80 80 0 0 1 80 80' data-name='Path 250872'/%3E%3Cpath fill='%23fff' d='m294.7 951-11.1-11.2-26.9 26.9-26.8-26.9-11.2 11.2 26.9 26.8-26.9 27 11.2 11 26.8-26.8 26.9 26.9 11.1-11.2L268 978Z' data-name='Path 250873'/%3E%3Cpath fill='%23f0f2f5' d='M837.8 1676H668.4l17-45.7 13.4-35.8 18-48.2 13.3-35.8 18-48.2h10.1l18 48.2 13.3 35.8 18 48.2 13.2 35.8Z' data-name='Path 250874'/%3E%3Cpath fill='%23e1e6eb' d='M650.3 1676H856v19H650.3z' data-name='Rectangle 184904'/%3E%3Cpath fill='%23fff' d='M820.7 1630.3H685.5l13.3-35.8h108.6Z' data-name='Path 250875'/%3E%3Cpath fill='%23fff' d='M789.5 1546.3h-72.7l13.3-35.8h46Z' data-name='Path 250876'/%3E%3Cpath fill='%23f0f2f5' d='M1630 1676h-169.3l17-45.7 13.4-35.8 18-48.2 13.2-35.8 18-48.2h10.2l17.9 48.2 13.3 35.8 18 48.2 13.3 35.8Z' data-name='Path 250877'/%3E%3Cpath fill='%23e1e6eb' d='M1442.5 1676h205.7v19h-205.7z' data-name='Rectangle 184905'/%3E%3Cpath fill='%23fff' d='M1613 1630.3h-135.3l13.4-35.8h108.6Z' data-name='Path 250878'/%3E%3Cpath fill='%23fff' d='M1581.7 1546.3H1509l13.3-35.8h46.1Z' data-name='Path 250879'/%3E%3Cpath fill='%23f0f2f5' d='M236.3 758.7h21.5l-21.5 25.6V838a11.1 11.1 0 0 1-11.1 11.2H16.5A11.1 11.1 0 0 1 5.4 838v-68a11.1 11.1 0 0 1 11.1-11.2Z' data-name='Path 250880'/%3E%3Cpath fill='%23f0f2f5' d='M2124.3 668.4h-21.5l21.5-25.6v-53.6a11.1 11.1 0 0 1 11.1-11.1h208.7a11.1 11.1 0 0 1 11.2 11.1v68a11.1 11.1 0 0 1-11.2 11.2Z' data-name='Path 250881'/%3E%3Cpath fill='%23f0f2f5' d='M1075.8 122h49.3l-49.3 58.9v123.3A25.6 25.6 0 0 1 1050 330H570a25.6 25.6 0 0 1-25.7-25.7V147.6A25.6 25.6 0 0 1 570 122Z' data-name='Path 250882'/%3E%3Cpath fill='%23f0f2f5' d='M1695.6 385.2h-37.8l37.8-45.1v-94.5a19.7 19.7 0 0 1 19.7-19.7h367.9a19.7 19.7 0 0 1 19.6 19.7v120a19.7 19.7 0 0 1-19.6 19.6Z' data-name='Path 250887'/%3E%3Cpath fill='%23f0f2f5' d='M2280.4 829v312.8l-21.8-20.5-22 20.5-21.8-20.5-22 20.5-21.8-20.5-21.9 20.5-21.9-20.5-21.9 20.5-21.9-20.5-21.9 20.5-21.8-20.5-22 20.5-21.8-20.5-22 20.5-21.8-20.5-22 20.5V753.3h274.6Z' data-name='Path 250891'/%3E%3Cpath fill='%23e1e6eb' d='M2280.4 829h-75.7v-75.7Z' data-name='Path 250892'/%3E%3Cpath fill='%23e1e6eb' d='m2229 862.7-12.9-13-31.2 31.2-31.2-31.2-13 13 31.3 31.2-31.2 31.2 13 13 31.1-31.3 31.2 31.2 13-13-31.2-31.1Z' data-name='Path 250893'/%3E%3Cpath fill='%23e1e6eb' d='m2069.8 862.7-12.9-13-31.2 31.2-31.2-31.2-13 13 31.3 31.2-31.2 31.2 13 13 31.1-31.3L2057 938l13-13-31.2-31.1Z' data-name='Path 250894'/%3E%3Cpath fill='%23e1e6eb' d='M2158.2 1035.7a75 75 0 0 0-105.8 0l-11.8-11.8a91.7 91.7 0 0 1 129.5 0Z' data-name='Path 250895'/%3E%3Cpath fill='%23f0f2f5' d='m7.8 1440.4 135.9-216a50.5 50.5 0 0 1 85.5 0l135.8 216a50.5 50.5 0 0 1-42.8 77.4H50.6a50.5 50.5 0 0 1-42.8-77.4' data-name='Path 250896'/%3E%3Cpath fill='%23e1e6eb' d='M290.5 1481.7H82.3a39.7 39.7 0 0 1-33.6-60.8l104.1-165.5a39.7 39.7 0 0 1 67.2 0L324 1421a39.7 39.7 0 0 1-33.6 60.8m-240-59.7a37.7 37.7 0 0 0 32 57.7h208a37.7 37.7 0 0 0 32-57.7l-104.1-165.5a37.7 37.7 0 0 0-63.8 0Z' data-name='Path 250897'/%3E%3Cpath fill='%23e1e6eb' d='M186.6 1450.3q-7.7 0-12.6-4.1a13.7 13.7 0 0 1-4.9-11 14.3 14.3 0 0 1 5-11.1 18 18 0 0 1 12.5-4.5 17.3 17.3 0 0 1 12.3 4.5 14.6 14.6 0 0 1 4.8 11 14 14 0 0 1-4.7 11q-4.7 4.2-12.4 4.2m-14-166.4h26.6v121h-26.7Z' data-name='Path 250898'/%3E%3Cpath fill='%23f0f2f5' d='m1230.6 219.3 124.3-197.7a46.2 46.2 0 0 1 78.2 0l124.4 197.7a46.2 46.2 0 0 1-39.2 70.8h-248.6c-36.3 0-58.5-40-39.1-70.8' data-name='Path 250899'/%3E%3Cpath fill='%23e1e6eb' d='M1489.2 257.2h-190.4a36.4 36.4 0 0 1-30.8-55.8l.8.6-.8-.6L1363.2 50a36.4 36.4 0 0 1 61.6 0l95.3 151.4a36.4 36.4 0 0 1-30.9 55.8M1394 34.9a34.2 34.2 0 0 0-29 16.1l-95.2 151.5a34.4 34.4 0 0 0 29 52.7h190.5a34.4 34.4 0 0 0 29.2-52.7L1423 51a34.2 34.2 0 0 0-29-16' data-name='Path 250900'/%3E%3Cpath fill='%23e1e6eb' d='M1394.2 228.4q-7 0-11.5-3.8a12.5 12.5 0 0 1-4.5-10 13 13 0 0 1 4.6-10.3 16.5 16.5 0 0 1 11.4-4 15.8 15.8 0 0 1 11.3 4 13.4 13.4 0 0 1 4.4 10.2 12.8 12.8 0 0 1-4.3 10q-4.3 3.9-11.4 3.9M1381.3 76h24.5v110.6h-24.5Z' data-name='Path 250901'/%3E%3Cpath fill='%23d2d9e1' d='M654.1 245.1c-.3 6.9-1 14.3-2.9 19.1a52.8 52.8 0 0 1 8.6 3 89.5 89.5 0 0 0 3.3-20.6Zm9.7 1.4a152.8 152.8 0 0 1 1.8 17.6l8.6-2.2a157.1 157.1 0 0 0-2.2-17.4Zm9.2-2.1a128.8 128.8 0 0 1 4.3 16l8-3a123.9 123.9 0 0 0-4.7-15.6Zm-5.5-13.1 4.8-6 2 5.1Zm6-7.7a134.6 134.6 0 0 0 11-17.6l-9-5.7a121.5 121.5 0 0 1-6 12l-4.5.2a115.9 115.9 0 0 0 10.5-19.4l-10-4a87.6 87.6 0 0 1-9.3 20.3c-1.6 2.4-3 4-4.7 4.4a82.3 82.3 0 0 1 3.4 9.5c1.3-.6 3.1-1 8.7-1.8a62.5 62.5 0 0 1-4.7 6.3c-2.7 3.2-4.4 5-6.7 5.7a84 84 0 0 1 3.4 9.6c1.9-1 5-1.8 21.1-4.4.2 1 .5 2 .5 3l8.4-3.4a64.3 64.3 0 0 0-6-17Zm25.8 23.2h8v5.5h-8Zm2.6-43a180 180 0 0 0 3.9-9.8c1.4 3 3.1 6.8 4.3 9.8Zm5.5 16.3h-8v-5.4h8Zm0 15.9h-8v-5h8Zm24.1 16.3h-13.2v-5.5h10.3V236h-10.3v-5h10.3v-11h-10.3v-5.4h12v-10.9h-14.8l6-2.8a98.3 98.3 0 0 0-5.7-11.9l-9.7 4.3.2-.8-11.5-3.6a86 86 0 0 1-14.3 30.4 78.6 78.6 0 0 1 5 12l3-3.6v41h10.8v-5.3h32.2Zm57.8-34.7H782v-2h7.3Zm0 7.7H782v-2h7.3Zm0 8H782V231h7.3Zm-11-29L774 203a41.7 41.7 0 0 1-9 14.8v-3.1h-25.7v9H765V220a81.3 81.3 0 0 1 5 8 27.9 27.9 0 0 0 2-2.3V241h10v-.9h32.2v-6.8h-15V231h11v-5.7h-11v-2h11v-5.7h-11v-2h13.4v-7h-12.8l-1.3-3.8h6v-3.7h10.2v-8.9h-10.1V189h-10.8v15l-6.8 1.6 1 3h-5.5c.4-.9.8-1.7 1-2.7l-3.3-1h8.6V189h-10.6v3.4h-10.4v8.9h10.4Zm-38.9 31H765v-9h-25.6Zm28.5-32.7h-13.5l4.8-2.6a88 88 0 0 0-5.9-11.6l-9 4.5a102.6 102.6 0 0 1 4.5 9.7h-13v9.5h32Zm27.7 47.5a30.3 30.3 0 0 1-4.6 2.7 26.3 26.3 0 0 1-3.9-2.7Zm-40 4.5H749v-7h6.5Zm50.3-12.9-1.8.4h-34.2v8h9l-3.5 1a34.4 34.4 0 0 0 5 5.6 98.4 98.4 0 0 1-14.8 2.6V238h-26.5v29.5h9.9v-3.4h16.6v-3.8a40.3 40.3 0 0 1 4.3 8.4 95 95 0 0 0 20.7-5.3 63.8 63.8 0 0 0 19.1 5 39.1 39.1 0 0 1 6.6-9.5 82 82 0 0 1-13.8-2 35 35 0 0 0 10.4-12Zm60-10.7v-15.8H882V231Zm-29.1 0v-15.8h16V231Zm29-27.8V189h-13v14.3h-28.3v44.1h12.3V243h16v25.7h13V243H882v4h13v-43.8Zm72.5 35.1h10.5l3.5-26.5.5-14h-18.4l.5 14Zm5.2 23.4c5.7 0 10-3.9 10-9.2 0-5.3-4.3-9.3-10-9.3s-9.9 4-9.9 9.3c0 5.3 4.2 9.2 10 9.2Z' data-name='Path 250903'/%3E%3Cpath fill='%23d2d9e1' d='M661.7 505.7h13.5v-21.4c0-6.2-1.2-15.6-2-21.7h.4l5 15 8.5 22.8h8.2l8.4-22.9 5.2-14.9h.4c-.8 6.1-2 15.5-2 21.7v21.4H721v-62.5h-16.3l-9.5 27-3.5 11.4h-.4c-1.2-3.9-2.2-7.8-3.4-11.4l-10-27h-16.2Zm87.6-26 1.3-5.3a843 843 0 0 0 4.8-20h.3c1.7 6.3 3.3 13.8 5 20l1.3 5.3Zm19.2 26h15.8l-19.4-62.5h-18l-19.4 62.5h15.3l3.6-14.4H765Zm22.4 0h15v-62.5h-15Zm29.4 0h14.2v-20.8c0-7.5-1.2-16-1.9-23h.4l6.1 13.6 15.5 30.2H870v-62.5h-14.3v20.7c0 7.4 1.2 16.4 2 23h-.4l-6.1-13.8-15.6-30h-15.3Zm76.2 0h15v-50h17v-12.5h-48.9v12.4h17Zm41.7 0h40.6V493h-25.6v-13.3h21v-12.6h-21v-11.6h24.6v-12.4h-39.6Zm52.9 0h14.3v-20.8c0-7.5-1.3-16-2-23h.5l6.1 13.6 15.5 30.2h15.2v-62.5h-14.2v20.7a184 184 0 0 0 2 23h-.4l-6.2-13.8-15.5-30H991Zm78-26 1.4-5.3a843 843 0 0 0 4.8-20h.3c1.7 6.3 3.3 13.8 5 20l1.3 5.3Zm19.3 26h15.8l-19.4-62.5h-18l-19.4 62.5h15.3l3.6-14.4h18.5Zm22.3 0h14.3v-20.8c0-7.5-1.3-16-2-23h.5l6.1 13.6 15.5 30.2h15.3v-62.5H1146v20.7c0 7.4 1.2 16.4 2 23h-.4l-6.2-13.8-15.5-30h-15.3Zm90.7 1.2a26 26 0 0 0 20.4-9.3l-8-9.4a16 16 0 0 1-11.9 5.7c-8.8 0-14.5-7.2-14.5-19.6 0-12.2 6.6-19.4 14.7-19.4 4.5 0 7.7 2 10.8 4.8l8-9.5a26.6 26.6 0 0 0-19-8.2c-16 0-29.9 12-29.9 32.8 0 21.1 13.5 32 29.4 32Zm29.5-1.2h40.6V493H1246v-13.3h20.9v-12.6h-21v-11.6h24.7v-12.4h-39.7Zm98 1.2c17 0 28.6-12.3 28.6-32.8 0-20.4-11.6-32-28.6-32s-28.7 11.5-28.7 32 11.6 32.8 28.7 32.8Zm0-13c-8.3 0-13.3-7.6-13.3-19.8 0-12.1 5-19.2 13.3-19.2s13.3 7.1 13.3 19.2c0 12.2-5.1 19.8-13.3 19.8Zm40.2 11.8h15v-20.8h7.3c13.2 0 24.7-6.5 24.7-21.4 0-15.4-11.3-20.3-25-20.3h-22Zm15-32.6v-18h6.2c7.2 0 11.2 2.1 11.2 8.4 0 6.2-3.5 9.6-10.8 9.6Zm42.7 32.6h40.6V493h-25.6v-13.3h21v-12.6h-21v-11.6h24.7v-12.4h-39.7Zm68-50.7h6.7c7.1 0 11 2 11 7.8s-3.9 9-11 9h-6.7Zm35.5 50.7-14-24.8c6.5-3 10.8-8.9 10.8-18 0-15.2-11-19.7-24.4-19.7h-23v62.5h15v-22h7.3l11.5 22Zm21.8-26 1.4-5.3a843 843 0 0 0 4.8-20h.3c1.7 6.3 3.3 13.8 5 20l1.3 5.3Zm19.3 26h15.8l-19.4-62.5h-18l-19.4 62.5h15.3l3.6-14.4h18.5Zm27.2 0h15v-50h17v-12.5h-48.9v12.4h16.9Zm41.7 0h15v-62.5h-15Zm55.1 1.2c17.1 0 28.7-12.3 28.7-32.8 0-20.4-11.6-32-28.7-32s-28.6 11.5-28.6 32 11.6 32.8 28.6 32.8Zm0-13c-8.2 0-13.2-7.6-13.2-19.8 0-12.1 5-19.2 13.2-19.2s13.4 7.1 13.4 19.2c0 12.2-5.1 19.8-13.4 19.8Zm40.3 11.8h14.3v-20.8c0-7.5-1.3-16-2-23h.4l6.2 13.6 15.4 30.2h15.3v-62.5H1771v20.7c0 7.4 1.2 16.4 2 23h-.4l-6-13.8-15.6-30h-15.3Z' data-name='Path 250902'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .ribbon.cross-v1 {
+    transform: rotate(10deg);
+    width: 120%;
+    left: -10%;
+  }
+
+  .ribbon.cross-v2 {
+    transform: rotate(-5deg);
+    width: 120%;
+    left: -10%;
+  }
+
+  .center-ribbon {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    opacity: 0.36;
+    pointer-events: none;
+  }

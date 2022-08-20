@@ -3,9 +3,7 @@
 
 
 
-#  Turboframe.js 
-
-<img width="66px" src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg"/>
+#  Turboframe.js <img width="66px" src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg"/>
 
 
 檔案壓縮完成後大約 35KB (會再持續新增，目前還是以 ES5 寫法為主，瀏覽器支援落在 IE9 這個等級)，

@@ -174,7 +174,7 @@ function babelEs5() {
     ], {
       "allowEmpty": true
     })
-    .pipe(concat("turboframe_bundle.js"))
+    .pipe(concat("turboframe_bundle.min.js"))
 
     .pipe(babel({
       presets: ['@babel/env'],
@@ -190,7 +190,36 @@ function babelEs5() {
   // 編譯完成輸出路徑
 }
 
+// BABELES5 非同步 
+gulp.task("babelEs5Polyfills", function() {
+  return Observable.return(
+    babelEs5Polyfills()
+  );
+});
 
+// src('./src/pages/scss/*.scss')
+// 編譯 babelEs5Polyfills ES6 轉 5 
+function babelEs5Polyfills() {
+  return src([
+      "src/javascript/polyfills/*.js",
+    ], {
+      "allowEmpty": true
+    })
+    .pipe(concat("turboframe_polyfills_bundle.min.js"))
+
+    .pipe(babel({
+      presets: ['@babel/env'],
+      minified: true,
+    }))
+
+    .pipe(minify({
+      mangle: {
+        keepClassName: true
+      }
+    }))
+    .pipe(dest('./dist/js'))
+  // 編譯完成輸出路徑
+}
 // BROWSERSYNC TASKS
 function browsersyncServe(cb) {
   browsersync.init({
@@ -206,14 +235,13 @@ function browsersyncReload(cb) {
   cb();
 }
 
-
-
 // Watch Task
 function watchTask() {
   watch('*.html', browsersyncReload);
   watch(['./src/scss/*.scss', './javascript/*.js'], series(
     scssTask,
-    babelEs5
+    babelEs5,
+    babelEs5Polyfills
     // browsersyncReload
   ));
 }
@@ -221,4 +249,5 @@ function watchTask() {
 exports.default = series(
   scssTask,
   babelEs5,
+  babelEs5Polyfills
 );

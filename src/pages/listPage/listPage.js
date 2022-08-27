@@ -1,5 +1,5 @@
 import "../../scss/doc_listPage.scss";
-// import  '../../javascript/_all';
+// import  '../../javascript/turboframes_likeJQuery/_all';
 // fn();  
 // // var styles = {"example":"_example_amfqe_1"};
 

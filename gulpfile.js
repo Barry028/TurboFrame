@@ -72,10 +72,10 @@ const purgecss = require('gulp-purgecss');
 // iConFont 快速建立
 gulp.task('iconfonts', () =>
   gulp.src(
-    ['./src/iconfont/slim/Regular/**.svg',
-      './src/iconfont/slim/Bold/**.svg',
-      './src/iconfont/slim/Filled/**.svg',
-      './src/iconfont/slim/Light/**.svg'
+    ['./src/iconfont(templates)/slim/Regular/**.svg',
+      './src/iconfont(templates)/slim/Bold/**.svg',
+      './src/iconfont(templates)/slim/Filled/**.svg',
+      './src/iconfont(templates)/slim/Light/**.svg'
     ])
   .pipe(iconfont({
     fontName,
@@ -92,14 +92,14 @@ gulp.task('iconfonts', () =>
       glyphs: glyphs.map(mapGlyphs),
       descent: 100
     }
-    gulp.src(`src/iconfont/templates/${template}.css`)
+    gulp.src(`src/iconfont(templates)/templates/${template}.css`)
       .pipe(consolidate('lodash', options))
       .pipe(rename({
         basename: fontName
       }))
       .pipe(gulp.dest('dist/icons/t-slim-icon/css/'))
 
-    gulp.src(`src/iconfont/templates/${template}.html`)
+    gulp.src(`src/iconfont(templates)/templates/${template}.html`)
       .pipe(consolidate('lodash', options))
       .pipe(rename({
         basename: fontName
@@ -116,7 +116,33 @@ function mapGlyphs(glyph) {
   }
 }
 
+// SASS 非同步 
+gulp.task("pagesass", function() {
+  return Observable.return(
+    pageSassTask()
+  );
+});
 
+function pageSassTask() {
+  return src('./src/pages/**/*.scss')
+    .pipe(sourcemaps.init({
+      loadMaps: true
+    }))
+    .pipe(sass()) // expanded nested compact compressed
+    .pipe(
+      postcss([
+        // cssnano(),
+        postcssPresetEnv( /* pluginOptions */ )
+      ]))
+    .pipe(sass().on('error', sass.logError))
+    // .pipe(sourcemaps.write('./')) // 生成 sourcemaps 文件 (.map)
+    .pipe(sourcemaps.write('.', {
+      sourceRoot: '../../src/scss/'
+      // 寫入 Sourcemaps 到當前資料夾(以下下列 dest('assets/css')為基準點，
+      // SourceRoot：以匯出的資料夾為基準點找他原本的 scss 資料夾位置。
+    }))
+    .pipe(dest('./dist/css/gulp'));
+}
 
 // SASS 非同步 
 gulp.task("sass", function() {
@@ -126,7 +152,7 @@ gulp.task("sass", function() {
 });
 
 function scssTask() {
-  return src('./src/pages/scss/*.scss')
+  return src('./src/scss/*.scss')
     .pipe(sourcemaps.init({
       loadMaps: true
     }))
@@ -157,19 +183,19 @@ gulp.task("babelEs5", function() {
 function babelEs5() {
   return src([
       // "javascript/TurboFrame_Global.js",
-      "src/javascript/TurboFrame.js",
-      "src/javascript/TurboFrame_Prototype.js",
-      "src/javascript/TurboFrame_Ready.js",
-      "src/javascript/TurboFrame_Core.js",
-      "src/javascript/TurboFrame_Fragments.js",
-      "src/javascript/TurboFrame_Resize.js",
-      "src/javascript/TurboFrame_Browser.js",
-      "src/javascript/TurboFrame_Util.js",
-      "src/javascript/TurboFrame_Functions.js",
-      "src/javascript/TurboFrame_Elements.js",
-      "src/javascript/TurboFrame_String.js",
-      "src/javascript/TurboFrame_Events.js",
-      "src/javascript/TurboFrame_Ajax.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Prototype.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Ready.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Core.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Fragments.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Resize.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Browser.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Util.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Functions.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Elements.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_String.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Events.js",
+      "src/javascript/turboframes_likeJQuery/TurboFrame_Ajax.js",
       // "src/javascript/TurboFrame_Ajax.js",
     ], {
       "allowEmpty": true
@@ -239,7 +265,7 @@ function browsersyncReload(cb) {
 function watchTask() {
   watch('*.html', browsersyncReload);
   watch(['./src/scss/*.scss', './javascript/*.js'], series(
-    scssTask,
+    scssTask, pageSassTask,
     babelEs5,
     babelEs5Polyfills
     // browsersyncReload
@@ -247,7 +273,7 @@ function watchTask() {
 }
 
 exports.default = series(
-  scssTask,
+  scssTask, pageSassTask,
   babelEs5,
   babelEs5Polyfills
 );

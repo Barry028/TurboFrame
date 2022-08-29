@@ -27,6 +27,7 @@
 主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主
 
 - - -
+1. TurboFrame.js           ===>   主要檔案
 
 ```js
 
@@ -52,7 +53,8 @@ $("selector").find("selector")
 
 ```
 🟢  返回相應後代節點的 TurboFrame 對象。
-   
+
+...未完   
   
 - - -
 

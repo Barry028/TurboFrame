@@ -8,6 +8,7 @@
     var resizeHandlers = [];
     var flag = true;
     var start = null;
+
     var _windowResizeHandler = function() {
       var _runResizeHandlers = function() {
         // reinitialize other subscribed elements
@@ -17,18 +18,15 @@
         }
       };
 
-      var timer;
+      window.addEventListener('resize', JsUtils.throttle(function(event) {
+        _runResizeHandlers();
+      }, 250), false);
 
-      window.addEventListener('resize', function() {
-        JsUtils.throttle(timer, function() {
-          _runResizeHandlers();
-        }, 200);
-      });
     };
 
     return {
-      /////////////////////////////
-      // **   resize          ** //
+      ////////////////////////////
+      // **     Resize       ** //
       ////////////////////////////
       init: function(settings) {
         _windowResizeHandler();
@@ -62,10 +60,57 @@
           window.dispatchEvent(evt);
         }
       },
+      
+      ////////////////////////////
+      // **     Selectors    ** //
+      ////////////////////////////
+      // JsUtils.Gbody();
+      Gbody: function() {
+        return document.getElementsByTagName('body')[0];
+      },
+      // JsUtils.Gid("changeMode");
+      // JsUtils.Gid("changeMode" , JsUtils.Gbody());
+      Gid: function(id, parentNode) {
+        parentNode ?
+          (parentNode = parentNode || parentNode[0]) :
+          (parentNode = document);
+        return parentNode.getElementById("" + id + "");
+      },
+      // JsUtils.Gtag("li");
+      // JsUtils.Gtag("li" , JsUtils.Gbody());
+      Gtag: function(tag, parentNode) {
+        parentNode ?
+          (parentNode = parentNode || parentNode[0]) :
+          (parentNode = document);
+        return parentNode.getElementsByTagName("" + tag + "");
+      },
+      // JsUtils.Gclass("container");
+      // JsUtils.Gclass("container" , JsUtils.Gbody());
+      Gclass: function(className, parentNode) {
+        parentNode ?
+          (parentNode = parentNode || parentNode[0]) :
+          (parentNode = document);
+        return parentNode.getElementsByClassName("" + className + "");
+      },
+      // JsUtils.QuerAll("#changeMode");
+      // JsUtils.QuerAll("#changeMode" , JsUtils.Gbody());
+      QuerAll: function(selector, parentNode) {
+        parentNode ?
+          (parentNode = parentNode || parentNode[0]) :
+          (parentNode = document);
+        return parentNode.querySelectorAll("" + selector + "")
+      },
+      // JsUtils.Quer(".container");
+      // JsUtils.Quer(".container" , JsUtils.Gbody());
+      Quer: function(selector, parentNode) {
+        parentNode ?
+          (parentNode = parentNode || parentNode[0]) :
+          (parentNode = document);
+        return parentNode.querySelector("" + selector + "")
+      },
       /////////////////////////////
       // **   objects   ** //
       ////////////////////////////
-
       isset: function(obj, keys) {
         var stone;
 
@@ -94,11 +139,9 @@
 
         return true;
       },
-
       isArray: function(obj) {
         return Object.prototype.toString.call(obj) === '[object Array]';
       },
-
       isCollectionContains: function(collection, searchText) {
         for (var i = 0; i < collection.length; i++) {
           if (collection[i].innerText.toLowerCase().indexOf(searchText) > -1) {
@@ -107,11 +150,9 @@
         }
         return false;
       },
-
       isFunction: function(obj) {
         return Object.prototype.toString.call(obj) === '[object Function]';
       },
-
       isArrayLike: function(obj) {
         return (
           obj instanceof Object &&
@@ -119,7 +160,6 @@
           obj.length >= 0
         )
       },
-
       /////////////////////////////
       // **   Arrays Tools   ** //
       ////////////////////////////
@@ -151,16 +191,13 @@
         }
         return obj;
       },
-
       /////////////////////////////
-      // **   Screen Extent   ** //
+      // **   Screen Check   ** //
       ////////////////////////////
-
       // JsUtils.isAppleDevice()
       isAppleDevice: function() {
         return /Mac|iPod|iPhone|iPad/.test(navigator.platform);
       },
-
       // JsUtils.isMobileDevice()
       isMobileDevice: function() {
         var test = (this.getViewPort().width < this.getBreakpoint('lg') ? true : false);
@@ -169,13 +206,10 @@
         }
         return test;
       },
-
       // JsUtils.isDesktopDevice()
       isDesktopDevice: function() {
         return JsUtils.isMobileDevice() ? false : true;
       },
-
-      
       // JsUtils.getMobileSystem()
       getMobileSystem: function() {
         var ua = navigator.userAgent,
@@ -190,8 +224,6 @@
         }
         return false;
       },
-
-
       /////////////////////////////
       // **   Clone Extent   ** //
       ////////////////////////////
@@ -276,23 +308,18 @@
         };
       },
 
-
-
       hasFixedPositionedParent: function(el) {
         var position;
-
         while (el && el !== document) {
           position = JsUtils.css(el, 'position');
-
           if (position === "fixed") {
             return true;
           }
-
           el = el.parentNode;
         }
-
         return false;
       },
+
       /////////////////////////////
       // **   sleep   ** //
       ////////////////////////////
@@ -994,6 +1021,25 @@
       /////////////////////////////
       // **   get Values ** //
       ////////////////////////////
+      // JsUtils.getViewPort()
+      getViewPort: function() {
+        var view = window,
+          val = 'inner';
+        if (!('innerWidth' in window)) {
+          val = 'client';
+          view = document.documentElement || document.body;
+        }
+
+        return {
+          width: view[val + 'Width'],
+          height: view[val + 'Height']
+        };
+      },
+
+      getViewportWidth: function() {
+        return this.getViewPort().width;
+      },
+
       getResponsiveValue: function(value, defaultValue) {
         var width = this.getViewPort().width;
         var result;
@@ -1074,9 +1120,7 @@
 
         return hex;
       },
-      getViewportWidth: function() {
-        return this.getViewPort().width;
-      },
+
 
       getUniqueId: function(prefix) {
         return prefix + Math.floor(Math.random() * (new Date()).getTime());
@@ -1090,19 +1134,6 @@
         }
 
         return value;
-      },
-      getViewPort: function() {
-        var e = window,
-          a = 'inner';
-        if (!('innerWidth' in window)) {
-          a = 'client';
-          e = document.documentElement || document.body;
-        }
-
-        return {
-          width: e[a + 'Width'],
-          height: e[a + 'Height']
-        };
       },
 
       isInViewport: function(element) {
@@ -1132,20 +1163,24 @@
 
 
       /////////////////////////////
-      // **   strings   ** //
+      // **     Strings      ** //
       ////////////////////////////
+
+      // JsUtils.snakeToCamel('background-color')
       snakeToCamel: function(s) {
         return s.replace(/(\-\w)/g, function(m) {
           return m[1].toUpperCase();
         });
       },
+      // JsUtils.getRandomInt(0,100)
       getRandomInt: function(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       },
-
+      // JsUtils.trim(' background-color ')
       trim: function(string) {
         return string.trim();
       },
+
       /////////////////////////////
       // **   Colors   ** //
       ////////////////////////////
@@ -1180,6 +1215,8 @@
 
       isHexColor(code) {
         return /^#[0-9A-F]{6}$/i.test(code);
-      }
-    }
+      },
+    };
+
   }();
+  var JSTU = JsUtils.extend(JsUtils);

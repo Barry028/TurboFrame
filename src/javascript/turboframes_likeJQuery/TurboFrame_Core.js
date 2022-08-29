@@ -1,6 +1,5 @@
 // 各種觸發事件
-
-
+;
 (function(window, undefined) {
 
     TurboFrame.extend({
@@ -26,7 +25,7 @@
 
         noop: function() {},
         type: function(obj) {
-            return obj == null ? String(obj) : class2type[Array.prototype.toString.call(obj)] || "object";
+                return obj == null ? String(obj) : class2type[Array.prototype.toString.call(obj)] || "object";
         },
         isObject: function(obj) {
             return TurboFrame.type(obj) === "object";

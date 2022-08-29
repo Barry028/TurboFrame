@@ -38,8 +38,10 @@ const lodash = require('lodash');
 
 const svgicons2svgfont = require('gulp-svgicons2svgfont');
 
-const fontName = 't-slim-icon';
-const className = 't-slim-ic';
+// const fontName = 't-slim-icon';
+// const className = 't-slim-ic';
+const fontName = 't-duotune';
+const className = 't-duotune';
 // templates Path
 const fontPath = './src/iconfont/templates/';
 const template = 'iconfonts';
@@ -71,12 +73,10 @@ const purgecss = require('gulp-purgecss');
 
 // iConFont 快速建立
 gulp.task('iconfonts', () =>
-  gulp.src(
-    ['./src/iconfont(templates)/slim/Regular/**.svg',
-      './src/iconfont(templates)/slim/Bold/**.svg',
-      './src/iconfont(templates)/slim/Filled/**.svg',
-      './src/iconfont(templates)/slim/Light/**.svg'
-    ])
+  gulp.src('./src/iconfont(templates)/duotune/*/*.svg')
+  // src(
+  // ['./src/iconfont(templates)/duotune/*/**.svg'
+  // ])
   .pipe(iconfont({
     fontName,
     formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
@@ -87,26 +87,35 @@ gulp.task('iconfonts', () =>
     // const timestamp = Math.round(Date.now() / 1000)
     const options = {
       className: className,
+      timestamp,
       fontName,
       fontPath: '../fonts/', // set path to font (from your CSS file if relative)
       glyphs: glyphs.map(mapGlyphs),
-      descent: 100
+
+      fontHeight: 0,
+      descent: 0,
+      round: 0,
+      centerHorizontally: false,
+      centerVertically: false,
+      normalize: false,
+      preserveAspectRatio: true,
+
     }
     gulp.src(`src/iconfont(templates)/templates/${template}.css`)
       .pipe(consolidate('lodash', options))
       .pipe(rename({
         basename: fontName
       }))
-      .pipe(gulp.dest('dist/icons/t-slim-icon/css/'))
+      .pipe(gulp.dest('dist/icons/duotune/css/'))
 
     gulp.src(`src/iconfont(templates)/templates/${template}.html`)
       .pipe(consolidate('lodash', options))
       .pipe(rename({
         basename: fontName
       }))
-      .pipe(gulp.dest('dist/icons/t-slim-icon/'))
+      .pipe(gulp.dest('dist/icons/duotune/'))
   })
-  .pipe(gulp.dest('./dist/icons/t-slim-icon/fonts/'))
+  .pipe(gulp.dest('./dist/icons/duotune/fonts/'))
 )
 
 function mapGlyphs(glyph) {
@@ -132,7 +141,11 @@ function pageSassTask() {
     .pipe(
       postcss([
         // cssnano(),
-        postcssPresetEnv( /* pluginOptions */ )
+        postcssPresetEnv({
+          preserve: true,
+          minimumVendorImplementations: 4,
+          stage: 0
+        })
       ]))
     .pipe(sass().on('error', sass.logError))
     // .pipe(sourcemaps.write('./')) // 生成 sourcemaps 文件 (.map)

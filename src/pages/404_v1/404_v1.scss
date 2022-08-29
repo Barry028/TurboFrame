@@ -1,49 +1,73 @@
 :root {
-  --primary:#11ece5;
-  --secondary:#6A85EA;
-  --tertiary:#F7509F;
-  --quaternary:#F9F871;
-  --success:#9EF6AB;
-  --danger:#B21A6B;
-  --warning:#FF9A3E;
-  --info:#00D0FC;
-  --link:#4AF3DF;
-  --link-hover:#0892A9;
-  --black:#04040E;
-  --dark:#070711;
-  --grey:#18181F;
-  --lightgrey:#646478;
-  --light:#E8E8F3;
-  --white:#fff;
-  --default:#f2f2f2;
-  --body-color:var(--dark);
-  --body-bg:var(--default);
+  --primary: #11ece5;
+  --secondary: #6A85EA;
+  --tertiary: #F7509F;
+  --quaternary: #F9F871;
+  --success: #9EF6AB;
+  --danger: #B21A6B;
+  --warning: #FF9A3E;
+  --info: #00D0FC;
+  --link: #4AF3DF;
+  --link-hover: #0892A9;
+  --black: #04040E;
+  --dark: #070711;
+  --grey: #18181F;
+  --lightgrey: #646478;
+  --light: #E8E8F3;
+  --white: #fff;
+  --default: #f2f2f2;
+  --body-color: var(--dark);
+  --body-bg: var(--default);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #11ece5;
+    --secondary: #6A85EA;
+    --tertiary: #F7509F;
+    --quaternary: #F9F871;
+    --success: #9EF6AB;
+    --danger: #B21A6B;
+    --warning: #FF9A3E;
+    --info: #00D0FC;
+    --link: #4AF3DF;
+    --link-hover: #0892A9;
+    --black: #04040E;
+    --dark: #070711;
+    --grey: #18181F;
+    --lightgrey: #646478;
+    --light: #A2A2BB;
+    --white: #fff;
+    --default: #f2f2f2;
+    --body-color: var(--default);
+    --body-bg: var(--dark);
+  }
 }
 
 .dark__mode {
-  --primary:#11ece5;
-  --secondary:#6A85EA;
-  --tertiary:#F7509F;
-  --quaternary:#F9F871;
-  --success:#9EF6AB;
-  --danger:#B21A6B;
-  --warning:#FF9A3E;
-  --info:#00D0FC;
-  --link:#4AF3DF;
-  --link-hover:#0892A9;
-  --black:#04040E;
-  --dark:#070711;
-  --grey:#18181F;
-  --lightgrey:#646478;
-  --light:#A2A2BB;
-  --white:#fff;
-  --default:#f2f2f2;
-  --body-color:var(--default);
-  --body-bg:var(--dark);
+  --primary: #11ece5;
+  --secondary: #6A85EA;
+  --tertiary: #F7509F;
+  --quaternary: #F9F871;
+  --success: #9EF6AB;
+  --danger: #B21A6B;
+  --warning: #FF9A3E;
+  --info: #00D0FC;
+  --link: #4AF3DF;
+  --link-hover: #0892A9;
+  --black: #04040E;
+  --dark: #070711;
+  --grey: #18181F;
+  --lightgrey: #646478;
+  --light: #A2A2BB;
+  --white: #fff;
+  --default: #f2f2f2;
+  --body-color: var(--default);
+  --body-bg: var(--dark);
 }
 
 .float--change-mode {
-  --btn-size:2rem;
+  --btn-size: 2rem;
   width: var(--btn-size);
   height: var(--btn-size);
   position: fixed;

@@ -5,6 +5,7 @@
 // }
 
 // export { TurboString as default };
+;
 (function(TurboFrame) {
 
 

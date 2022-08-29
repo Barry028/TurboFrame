@@ -7,32 +7,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="../../../src/javascript/polyfills/polyfills-passive-events.js"></script>
   <link rel="stylesheet" type="text/css" href="../../../dist/css/gulp/404_v1/404_v1.css" media="screen">
+  <script type="text/javascript" src="../../javascript/turboframes_justJavascript/turboframe_JsUtils.js"></script>
+  <script type="text/javascript" src="../../javascript/components/darkMode.js"></script>
   <script>
+  console.log(window);
+
   document.addEventListener("DOMContentLoaded", function() {
+    var btns = JSTU.Gid("changeMode");
+    var darkmode = new JsDarkMode(btns, {
+      storageName: "darkMode",
+      // element: "#changeMode",
 
-
-
-    const toggleButton = document.querySelector('.float--change-mode');
-
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark__mode');
     });
+    // var darkMode = localStorage.getItem("darkMode");
+    // var dBody = JSTU.Gbody();
+    // var changeBtn = JSTU.Gid("changeMode");
+    // var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    // // 檢查有沒有 Catche
+    // darkMode === "enabled" ? openDarkMode() : offDarkMode();
+
+    // function openDarkMode() {
+    //   window.matchMedia("(prefers-color-scheme: dark)");
+    //   dBody.classList.add("dark__mode");
+    //   localStorage.setItem("darkMode", "enabled");
+    //   return true;
+    // }
+
+    // function offDarkMode() {
+    //   window.matchMedia("(prefers-color-scheme: light)");
+    //   dBody.classList.remove("dark__mode");
+    //   localStorage.setItem("darkMode", "");  
+    //   return true;
+    // }
+
+    // var scheme = window.matchMedia("scheme-dark");
+
+    // function observeMediaChange(scheme, callback) {
+    //   var disposeFunc = {};
+    //   if (scheme.addEventListener && scheme.removeEventListener) {
+    //     scheme.addEventListener("change", callback);
+    //     disposeFunc = function() {
+    //       scheme.removeEventListener("change", callback);
+    //     };
+    //   }
+    //   return disposeFunc;
+    // }
+
+    // observeMediaChange(scheme, function(event) {
+    //   event.matches ? openDarkMode() : offDarkMode();
+    // });
+
+    // changeBtn.addEventListener("click", function(event) {
+    //   var darkMode = localStorage.getItem("darkMode");
+    //   darkMode == "enabled" ? offDarkMode() : openDarkMode();
+    // });
   });
+
   window.addEventListener("load", function(event) {
 
   });
   </script>
-  <script type="text/javascript" src="../../javascript/turboframes_justJavascript/turboframe_JsUtils.js"></script>
 </head>
 
 <body>
   <!-- <textarea autocapitalize="none">My name is zhangxinxu, I am a cool boy, HaHaHa!</textarea> -->
   <main>
     <ul class="array-likes" id="array_ul">
-      <li class="array-likes-items"><a href="" id="exampleButton">首頁</a></li>
+      <li class="array-likes-items"><a href="" id="">首頁</a></li>
       <li class="array-likes-items"><a href="">網站導覽</a></li>
       <li class="array-likes-items"><a href="">關於我們</a></li>
     </ul>
+    <p class="ssds" data-sss="a00"></p>
     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" display="block" overflow="visible" style="margin:0 auto" viewBox="0 0 326 592" width="240">
       <g fill="var(--body-color)" style="animation-name:verticalAnimation;animation-duration:1s;animation-iteration-count:infinite;animation-direction:alternate;animation-timing-function:ease-in-out">
         <ellipse cx="160" cy="480" fill="var(--body-color)" rx="60" ry="20" style="animation-name:shadowAnimation;animation-duration:1.6s;animation-iteration-count:infinite;animation-direction:alternate;animation-timing-function:ease-in-out" transform-origin="50% 20%" />
@@ -56,7 +101,7 @@
       </p>
     </div>
   </main>
-  <div class="float--change-mode">
+  <div class="float--change-mode" id="changeMode">
     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
   </div>

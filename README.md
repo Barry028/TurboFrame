@@ -1,12 +1,9 @@
 
 ![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg)
-# 圖床集合（已壓縮過及有版權）
 
-* [圖床 Git 位置](https://github.com/Barry028/TurboFrame/tree/main/shares/images)
 
-* [展示(未完成)](https://codepen.io/barry199002/full/KKojxXX/13341a19a81088f2e3546004117a64e4)
 
-#  Turbofram.bunble.js <img width="66px" src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg"/>
+#  Turboframe.js <img width="66px" src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg"/>
 
 
 檔案壓縮完成後大約 35KB (會再持續新增，目前還是以 ES5 寫法為主，瀏覽器支援落在 IE9 這個等級)，

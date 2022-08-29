@@ -24,7 +24,7 @@
 
 ## 👉 [TurboFrame.bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_bundle.min.js)
 
-主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主
+主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 getElement 選法為主，querySelector 為輔。
 
 - - -
 1. TurboFrame.js           ===>   主要檔案

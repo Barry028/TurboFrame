@@ -1,7 +1,11 @@
 
 ![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg)
 
+# 圖床集合（已壓縮過及有版權）
 
+* [圖床 Git 位置](https://github.com/Barry028/TurboFrame/tree/main/shares/images)
+
+* [展示(未完成)](https://codepen.io/barry199002/full/KKojxXX/13341a19a81088f2e3546004117a64e4)
 
 #  Turboframe.js <img width="66px" src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg"/>
 
@@ -10,16 +14,20 @@
 支援 JQuery 大部分用法 (有缺或 Bug再跟我說)
 
 ```html
-
-<script src="./dist/js/TurboFrame.bunble.js"></script>
+<script src="./turboframe_polyfills_bundle.bundle.min.js.js"></script>
+<script src="./turboframe_bundle.bundle.min.js.js"></script>
 
 ```
+## 👉 [Turboframe_polyfills_bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_polyfills_bundle.min.js)
 
-## 👉 [TurboFrame.js](https://github.com/Barry028/TurboFrame/blob/main/src/javascript/TurboFrame.js)
+* Pollyfills
 
-主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主
+## 👉 [TurboFrame.bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_bundle.min.js)
+
+主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 選擇後統一新增至新陣列(純 JavaScript 工具包在另一個 JsUtils.js)，以 getElement 選法為主，querySelector 為輔。
 
 - - -
+1. TurboFrame.js           ===>   主要檔案
 
 ```js
 
@@ -45,7 +53,8 @@ $("selector").find("selector")
 
 ```
 🟢  返回相應後代節點的 TurboFrame 對象。
-   
+
+...未完   
   
 - - -
 

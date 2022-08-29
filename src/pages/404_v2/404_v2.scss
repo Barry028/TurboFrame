@@ -1,0 +1,213 @@
+:root {
+  --primary:#11ece5;
+  --secondary:#6A85EA;
+  --tertiary:#F7509F;
+  --quaternary:#F9F871;
+  --success:#9EF6AB;
+  --danger:#B21A6B;
+  --warning:#FF9A3E;
+  --info:#00D0FC;
+  --link:#4AF3DF;
+  --link-hover:#0892A9;
+  --black:#04040E;
+  --dark:#070711;
+  --grey:#18181F;
+  --lightgrey:#646478;
+  --light:#E8E8F3;
+  --white:#fff;
+  --default:#f2f2f2;
+  --body-color:var(--dark);
+  --body-bg:var(--default);
+}
+
+.dark__mode {
+  --primary:#11ece5;
+  --secondary:#6A85EA;
+  --tertiary:#F7509F;
+  --quaternary:#F9F871;
+  --success:#9EF6AB;
+  --danger:#B21A6B;
+  --warning:#FF9A3E;
+  --info:#00D0FC;
+  --link:#4AF3DF;
+  --link-hover:#0892A9;
+  --black:#04040E;
+  --dark:#070711;
+  --grey:#18181F;
+  --lightgrey:#646478;
+  --light:#A2A2BB;
+  --white:#fff;
+  --default:#f2f2f2;
+  --body-color:var(--default);
+  --body-bg:var(--dark);
+}
+
+.float--change-mode {
+  --btn-size:2rem;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--light);
+  box-shadow: -2px 4px 12px 2px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  border-radius: 50%;
+  z-index: 99;
+
+  svg {
+    width: var(--btn-size);
+    height: var(--btn-size);
+    fill: transparent;
+    transition: 0.6s background-color ease;
+  }
+}
+
+.dark__mode .float--change-mode svg {
+  fill: var(--quaternary);
+  stroke: var(--quaternary);
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 1.25rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(120deg);
+  }
+
+  100% {
+    transform: rotate(170deg);
+  }
+}
+
+@keyframes moveLeftArm {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes moveRightArm {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes shadowAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 0.6;
+  }
+}
+
+@keyframes verticalAnimation {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes blinkLight {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinkEye {
+  0% {
+    transform: scaleY(0);
+  }
+
+  4% {
+    transform: scaleY(1);
+  }
+}
+
+.cus-btn {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  background: var(--primary);
+  border: 2px solid transparent;
+  border-radius: 4rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.125rem;
+  padding: 0.375rem 2rem;
+  white-space: nowrap;
+  transition: background 0.375s ease;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(var(--white), var(--white));
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 160%;
+    width: 100%;
+    top: -30%;
+    left: 0;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(50%, rgba(255, 255, 255, 0.5)), to(rgb(255, 255, 240, 1)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 50%, rgb(255, 255, 240, 1) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 50%, rgb(255, 255, 240, 1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 50%, rgb(255, 255, 240, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
+    transform: translate(-200%, 0) skew(20deg);
+    transition: transform 0.25s ease;
+    opacity: 0.36;
+  }
+
+  &:hover {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.48);
+
+    &:before {
+      transform: translateX(200%) skew(20deg);
+    }
+  }
+}

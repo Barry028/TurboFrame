@@ -14,12 +14,15 @@
 支援 JQuery 大部分用法 (有缺或 Bug再跟我說)
 
 ```html
-
-<script src="./dist/js/TurboFrame.bunble.js"></script>
+<script src="./turboframe_polyfills_bundle.bundle.min.js.js"></script>
+<script src="./turboframe_bundle.bundle.min.js.js"></script>
 
 ```
+## 👉 [Turboframe_polyfills_bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_polyfills_bundle.min.js)
 
-## 👉 [TurboFrame.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_polyfills_bundle.min.js)
+* Pollyfills
+
+## 👉 [TurboFrame.bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_bundle.min.js)
 
 主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主
 

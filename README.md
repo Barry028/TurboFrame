@@ -1,62 +1,70 @@
-&emsp; 
-&emsp; 
-&emsp; 
-&emsp; 
-
-
-
-
-
 
 ![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg)
-&emsp;
-&emsp;
-&emsp;
-&emsp;
+
+<br>
+
 # 圖床集合（已壓縮過及有版權）
-&emsp;
-&emsp;
-&emsp;
-&emsp;
+
 * [圖床 Git 位置](https://github.com/Barry028/TurboFrame/tree/main/shares/images)
-&emsp;
-&emsp;
+
 * [展示(未完成)](https://codepen.io/barry199002/full/KKojxXX/13341a19a81088f2e3546004117a64e4)
-&emsp;
-&emsp;
-&emsp;
-&emsp;
+
 #  Turboframe.js <img width="66px" src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg"/>
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-檔案壓縮完成後大約 35KB (會再持續新增，目前還是以 ES5 寫法為主，瀏覽器支援落在 IE9 這個等級)，
-支援 JQuery 大部分用法 (有缺或 Bug再跟我說)
-&emsp;
-&emsp;
-&emsp;
-&emsp;
+
+<br>
+<!-- 
+```mermaid
+        gantt
+        dateFormat  YYYY-MM-DD
+        title 軟件開發甘特圖
+        section 設計
+        需求                      :done,    des1, 2014-01-06,2014-01-08
+        原型                      :active,  des2, 2014-01-09, 3d
+        UI設計                     :         des3, after des2, 5d
+    未來任務                     :         des4, after des3, 5d
+        section 開發
+        學習準備理解需求                      :crit, done, 2014-01-06,24h
+        設計框架                             :crit, done, after des2, 2d
+        開發                                 :crit, active, 3d
+        未來任務                              :crit, 5d
+        耍                                   :2d
+        section 測試
+        功能測試                              :active, a1, after des3, 3d
+        壓力測試                               :after a1  , 20h
+        測試報告                               : 48h
+``` -->
+
 ```html
 <script src="./turboframe_polyfills_bundle.bundle.min.js.js"></script>
 <script src="./turboframe_bundle.bundle.min.js.js"></script>
 ```
-&emsp;
-&emsp;
-&emsp;
-&emsp;
+
+<br>
+
 ## 👉 [Turboframe_polyfills_bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_polyfills_bundle.min.js)
-&emsp;
-&emsp;
+
+<br>
+
 * Pollyfills
-&emsp;
-&emsp;
+
+<br>
+
 ## 👉 [TurboFrame.bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_bundle.min.js)
+
+<br>
 
 主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 選擇後統一新增至新陣列(純 JavaScript 工具包在另一個 JsUtils.js)，以 getElement 選法為主，querySelector 為輔。
 
+<br>
+
 - - -
+
+<br>
+
 1. TurboFrame.js           ===>   主要檔案
+
+<br>
+
 
 ```js
 

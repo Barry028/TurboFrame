@@ -1,11 +1,10 @@
 
 #  東柏資訊 模組 
 
-![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg)
+![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg){width="200", height="200"}{++ inserted ++}
 
 ------------
 
-<!-- <img src='https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg'  width='32px' style='display: inline'/> -->
 
 #  👉 圖床集合（已壓縮過及有版權） <img src='https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg'  width='64'/>
 
@@ -130,15 +129,12 @@ $ npm gulp default
 < ... 未完 >
 
 
-## 圖庫 (已壓縮過圖片，以今年流行 3D 為主)
-
-# [dist/images/]
-
 ## Icon Font 迷你包 （之前包的偏大包）
 
 [dist/icons/slim-icon/]
 
 < ... 未完 >
+
 
 ## Html 樣式模板 (簡易版型樣式較小好修改)
 

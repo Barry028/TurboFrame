@@ -1,7 +1,7 @@
 
 #  東柏資訊 模組 
 
-![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg){width="200", height="200"}{++ inserted ++}
+![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg)
 
 ------------
 

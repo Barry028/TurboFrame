@@ -1,0 +1,264 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:README</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<p><img src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg" alt="Turbotech"></p>
+<h1 id="-">圖床集合（已壓縮過及有版權）</h1>
+<ul>
+<li><p><a href="https://github.com/Barry028/TurboFrame/tree/main/shares/images">圖床 Git 位置</a></p>
+</li>
+<li><p><a href="https://codepen.io/barry199002/full/KKojxXX/13341a19a81088f2e3546004117a64e4">展示(未完成)</a></p>
+</li>
+</ul>
+<h1 id="turboframe-js-img-width-66px-src-https-cdn-jsdelivr-net-gh-barry028-turboframe-shares-images-bot-2-f8-svg-">Turboframe.js <img width="66px" src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg"/></h1>
+<p>檔案壓縮完成後大約 35KB (會再持續新增，目前還是以 ES5 寫法為主，瀏覽器支援落在 IE9 這個等級)，
+支援 JQuery 大部分用法 (有缺或 Bug再跟我說)</p>
+<pre><code class="lang-html">&lt;script src=&quot;./turboframe_polyfills_bundle.bundle.min.js.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;./turboframe_bundle.bundle.min.js.js&quot;&gt;&lt;/script&gt;
+
+</code></pre>
+<h2 id="-turboframe_polyfills_bundle-min-js-js">👉 <a href="https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_polyfills_bundle.min.js">Turboframe_polyfills_bundle.min.js.js</a></h2>
+<ul>
+<li>Pollyfills</li>
+</ul>
+<h2 id="-turboframe-bundle-min-js-js">👉 <a href="https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_bundle.min.js">TurboFrame.bundle.min.js.js</a></h2>
+<p>主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主</p>
+<hr>
+<pre><code class="lang-js">
+$(&quot;selector&quot;) || TurboFrame(&quot;selector&quot;)
+
+</code></pre>
+<p>🟢  支持  <code>Tag</code> , <code>#Id</code> , <code>.ClassName</code> , <code>Tag &gt; .ClassName</code> , <code>Tag &gt; Tag</code> , <code>#Id &gt; Tag.ClassName</code> , <code>.ClassName Tag</code> ,
+         <code>Tag , Tag , #Id</code> , <code>Tag#Id.ClassName</code>  , <code>span &gt; * &gt; b</code> , <code>input[name=radio]</code> 
+          傳入，不支持 [::偽元素] ，返回 TurboFrame 對象 [Array]。</p>
+<pre><code class="lang-js">
+$(&quot;selector&quot;).eq(index)
+
+</code></pre>
+<p>🟢  傳入索引值，返回對應的節點的 TurboFrame 對象。</p>
+<pre><code class="lang-js">
+$(&quot;selector&quot;).find(&quot;selector&quot;)
+
+</code></pre>
+<p>🟢  返回相應後代節點的 TurboFrame 對象。</p>
+<hr>
+<ol start="2">
+<li><p>TurboFrame_Core.js           ===&gt;   主要檔案</p>
+</li>
+<li><p>TurboFrame_Prototype.js      ===&gt;   主要檔案</p>
+</li>
+<li><p>TurboFrame_Fragments.js      ===&gt;   主要檔案</p>
+</li>
+<li><p>TurboFrame_Ready.js          ===&gt;   主要檔案</p>
+</li>
+</ol>
+<p>--</p>
+<ol start="6">
+<li><p>TurboFrame_Resize.js</p>
+</li>
+<li><p>TurboFrame_Browser.js</p>
+</li>
+<li><p>TurboFrame_Util.js</p>
+</li>
+<li><p>TurboFrame_Elements.js</p>
+</li>
+<li><p>TurboFrame_Events.js</p>
+</li>
+<li><p>TurboFrame_String.js</p>
+</li>
+<li><p>TurboFrame_Functions.js</p>
+</li>
+<li><p>TurboFrame_Ajax.js</p>
+</li>
+</ol>
+<hr>
+<h2 id="-">初始化專案環境</h2>
+<ul>
+<li>確定 Node 已安裝 Webpack</li>
+</ul>
+<pre><code class="lang-bash">
+$ npm - i
+
+$ npm run build
+
+$ npm gulp default
+
+</code></pre>
+<h2 id="webpack">webpack</h2>
+<p>[scss] scss   --&gt; scss 處理、Css 相容（變數轉支援低階瀏覽器 var(--xxx)）</p>
+<p>[babel] Js    --&gt; es5 轉 es6 </p>
+<p>[Html] Html   --&gt;  </p>
+<h2 id="gulp">Gulp</h2>
+<p><code>gulp default</code> run all</p>
+<p><code>gulp sass</code></p>
+<p><code>gulp iconfonts</code> // 圖片放進去路徑直接打包成 iconfont 並且產生模板範例</p>
+<p><code>gulp babelEs5</code> 同 webpack (這邊快一點打包好)</p>
+<p><code>gulp img</code> 壓縮 .jpg .png .gif .svg 以及產生 .webp</p>
+<p>&lt; ... 未完 &gt;</p>
+<h2 id="-3d-">圖庫 (已壓縮過圖片，以今年流行 3D 為主)</h2>
+<h1 id="-dist-images-">[dist/images/]</h1>
+<h2 id="icon-font-">Icon Font 迷你包 （之前包的偏大包）</h2>
+<p>[dist/icons/slim-icon/]</p>
+<p>&lt; ... 未完 &gt;</p>
+<h2 id="html-">Html 樣式模板 (簡易版型樣式較小好修改)</h2>
+<p>[dist/xx.html]</p>
+<p>&lt; ... 未完 &gt;</p>
+<h1 id="turboframe-javascript-library-turbotech">TurboFrame  Javascript Library -- TURBOTECH</h1>
+<p>原生 Javascript 類 JQurery 小型封裝包</p>
+<ul>
+<li><p>TurboFrame .js --&gt; </p>
+<p>主要框架，<code>TurboFrame (&#39;selector&#39;)</code> || <code>$(&#39;selector&#39;)</code></p>
+<p>原生 Javascript.getElement 為主，</p>
+<p>支援 後代、群組、通用、[data] ... 等等。</p>
+<p>Selector 綁在  window. TurboFrame .fn .</p>
+<p><strong>  TurboFrame .fn.extend({ ... }); </strong></p>
+</li>
+</ul>
+<ul>
+<li><p>TurboFrame_Core.js --&gt; </p>
+<p>主要框架，<code>TurboFrame .function(){ ... }</code> || <code>$.function(){ ... }</code></p>
+<p>處理  TurboFrame .js 相關，相關函數</p>
+<p>可單獨拿出來調用 --&gt; $.trim() , $.makeArray() ,  $.merge() ...</p>
+<p><strong>  TurboFrame .extend({ ... }); </strong></p>
+</li>
+</ul>
+<h2 id="api-">API 文檔</h2>
+<h3 id="-">基礎選擇器</h3>
+<ul>
+<li>.find(selector)</li>
+</ul>
+<p>返回相應後代節點的 TurboFrame 對象。</p>
+<ul>
+<li>.children([selector])</li>
+</ul>
+<p>只在子節點遍歷，返回全部或相應子節點的 TurboFrame 對象。</p>
+<ul>
+<li>.parent()</li>
+</ul>
+<p>返回父節點的 TurboFrame 對象，已排重。</p>
+<ul>
+<li>.parents([selector])</li>
+</ul>
+<p>返回上級節點對應選擇器的 TurboFrame 對象，已排重。</p>
+<ul>
+<li>.next()</li>
+</ul>
+<p>返回 TurboFrame 對象第一個元素之後第一個兄弟節點。</p>
+<ul>
+<li>.nextAll()</li>
+</ul>
+<p>返回 TurboFrame 對象第一個元素之後所有兄弟節點。</p>
+<ul>
+<li>.prev()</li>
+</ul>
+<p>返回 TurboFrame 對象第一個元素之前第一個兄弟節點。</p>
+<ul>
+<li>.prevAll()</li>
+</ul>
+<p>返回 TurboFrame 對象第一個元素之前所有兄弟節點。</p>
+<ul>
+<li>.siblings()</li>
+</ul>
+<p>返回 TurboFrame 對象第一個元素除自身以外所有兄弟節點。</p>
+<ul>
+<li>.append()</li>
+</ul>
+<p>在元素裡面內容的末尾插入內容。</p>
+<ul>
+<li>.prepend()</li>
+</ul>
+<p>在元素裡面內容的前面插入內容。</p>
+<ul>
+<li>.before()</li>
+</ul>
+<p>在元素之前插入內容。</p>
+<ul>
+<li>.after()</li>
+</ul>
+<p>在元素之後插入內容。</p>
+<p>&lt; ... 之後再打，功能都寫好了 &gt;</p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

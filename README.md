@@ -1,60 +1,68 @@
 
+#  東柏資訊 模組 
+
 ![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg)
 
-# 圖床集合（已壓縮過及有版權）
+------------
+
+<img src='https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg'  width='32px' style='display: inline'/>
+
+#  👉 圖床集合（已壓縮過及有版權） 
 
 * [圖床 Git 位置](https://github.com/Barry028/TurboFrame/tree/main/shares/images)
-
 * [展示(未完成)](https://codepen.io/barry199002/full/KKojxXX/13341a19a81088f2e3546004117a64e4)
 
-#  Turboframe.js <img width="66px" src="https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg"/>
+
+## 👉 [**turboframe_JsUtils.js**](https://github.com/Barry028/TurboFrame/blob/main/shares/javascript/turboframes_justJavascript/turboframe_JsUtils.js "**turboframe_JsUtils.js**")
+
+原生 Js 工具，較直接的調用方式，JsUtils.<abbr>fuc</abbr>();
+
+```html
+<script src="./turboframe_JsUtils.bundle.min.js"></script>
+```
 
 
-檔案壓縮完成後大約 35KB (會再持續新增，目前還是以 ES5 寫法為主，瀏覽器支援落在 IE9 這個等級)，
+## 👉 [**Turboframe_polyfills_bundle.min.js**](https://github.com/Barry028/TurboFrame/blob/main/shares/javascript/turboframe_polyfills_bundle.min.js)
+
+Pollyfills 原生方式，將較新語法的瀏覽器支援度提高。
+
+```html
+<script src="./turboframe_polyfills_bundle.bundle.min.js"></script>
+```
+
+
+## 👉 [**TurboFrame.bundle.min.js**](https://github.com/Barry028/TurboFrame/blob/main/shares/javascript/turboframe_bundle.min.js)
+
+主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主。
+
+> 檔案壓縮完成後大約 35KB (會再持續新增，目前還是以 ES5 寫法為主，瀏覽器支援落在 IE9 這個等級)，
 支援 JQuery 大部分用法 (有缺或 Bug再跟我說)
 
 ```html
-<script src="./turboframe_polyfills_bundle.bundle.min.js.js"></script>
-<script src="./turboframe_bundle.bundle.min.js.js"></script>
-
+<script src="./turboframe_bundle.bundle.min.js"></script>
 ```
-## 👉 [Turboframe_polyfills_bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_polyfills_bundle.min.js)
 
-* Pollyfills
+------------
 
-## 👉 [TurboFrame.bundle.min.js.js](https://github.com/Barry028/TurboFrame/blob/main/shares/js/turboframe_bundle.min.js)
-
-主要檔案，模擬 JQuery 選擇器，將 getElements、querseletor ... 統一新增到新的陣列，以 get 選法為主
-
-- - -
-
++ #### selector
+  + 🟢  支持  `Tag` , `#Id` , `.ClassName` , `Tag > .ClassName` , `Tag > Tag` , `#Id > Tag.ClassName` , `.ClassName Tag` , `Tag , Tag , #Id` , `Tag#Id.ClassName`  , `span > * > b` , `input[name=radio]`  傳入，不支持 [::偽元素] ，返回 TurboFrame 對象 [Array]。
 ```js
-
 $("selector") || TurboFrame("selector")
-
 ```
 
-🟢  支持  `Tag` , `#Id` , `.ClassName` , `Tag > .ClassName` , `Tag > Tag` , `#Id > Tag.ClassName` , `.ClassName Tag` ,
-         `Tag , Tag , #Id` , `Tag#Id.ClassName`  , `span > * > b` , `input[name=radio]` 
-          傳入，不支持 [::偽元素] ，返回 TurboFrame 對象 [Array]。
-
++ #### eq
+  + 🟢  傳入索引值，返回對應的節點的 TurboFrame 對象。
 ```js
-
 $("selector").eq(index)
-
 ```
 
-🟢  傳入索引值，返回對應的節點的 TurboFrame 對象。
-
++ #### find
+  + 🟢  返回相應後代節點的 TurboFrame 對象。
 ```js
-
 $("selector").find("selector")
-
 ```
-🟢  返回相應後代節點的 TurboFrame 對象。
-   
-  
-- - -
+
+------------
 
 2. TurboFrame_Core.js           ===>   主要檔案
 

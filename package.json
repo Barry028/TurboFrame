@@ -4,6 +4,7 @@
   "description": "類選擇器，小小 LibrarY.",
   "main": "index.js",
   "scripts": {
+    "md": " node node_modules/i5ting_toc/bin/tocmd.js -f sample.md -v -o",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development"
   },
@@ -44,6 +45,7 @@
     "gulp-svgicons2svgfont": "^6.0.0",
     "gulp-terser": "^2.1.0",
     "gulp-uglify": "^3.0.2",
+    "i5ting_toc": "^1.1.5",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "posthtml": "^0.16.6",

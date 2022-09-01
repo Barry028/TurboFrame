@@ -1,23 +1,23 @@
 
-#  東柏資訊 模組 
+# 東柏資訊 模組
 
 ![Turbotech](https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/Turbotech/logo_v11-b0.svg)
 
 ------------
 
 
-#  👉 圖床集合（已壓縮過及有版權） <img src='https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg'  width='64'/>
+# 👉 圖床集合（已壓縮過及有版權） <img src='https://cdn.jsdelivr.net/gh/Barry028/TurboFrame/shares/images/專案管理平台/bot-2-f8.svg'  width='64'/>
 
 * [圖床 Git 位置](https://github.com/Barry028/TurboFrame/tree/main/shares/images)
 * [展示(未完成)](https://codepen.io/barry199002/full/KKojxXX/13341a19a81088f2e3546004117a64e4)
 
 
-## 👉 [**turboframe_JsUtils.js**](https://github.com/Barry028/TurboFrame/blob/main/shares/javascript/turboframes_justJavascript/turboframe_JsUtils.js "**turboframe_JsUtils.js**")
+## 👉 [**Turboframe_JsUtils_justJavascript_bundle.min.js**](https://github.com/Barry028/TurboFrame/blob/main/shares/javascript/turboframes_justJavascript/turboframe_JsUtils.js "**turboframe_JsUtils.js**")
 
 原生 Js 工具，較直接的調用方式，JsUtils.<abbr>fuc</abbr>();
 
 ```html
-<script src="./turboframe_JsUtils.bundle.min.js"></script>
+<script src="./turboframe_JsUtils_justJavascript_bundle.min.js"></script>
 ```
 
 
@@ -92,7 +92,7 @@ $("selector").find("selector")
 
 ---
 
-## 初始化專案環境 
+## 初始化專案環境
 
 * 確定 Node 已安裝 Webpack
 
@@ -142,7 +142,7 @@ $ npm gulp default
 
 < ... 未完 >
 
-#  TurboFrame  Javascript Library -- TURBOTECH 
+# TurboFrame  Javascript Library -- TURBOTECH
 
 原生 Javascript 類 JQurery 小型封裝包
 
